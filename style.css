@@ -86,8 +86,14 @@ body {
     border-radius: 14px;
     margin: 12px 0 !important;
   }
+  /* Only hide .services-background, not .hero-background or .back-video */
   .services-background {
     display: none !important;
+  }
+  .hero-background, .back-video {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   /* Hero section mobile improvements */
   .parallax-section.hero {
