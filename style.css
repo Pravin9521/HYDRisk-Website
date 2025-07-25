@@ -86,7 +86,7 @@ body {
     border-radius: 14px;
     margin: 12px 0 !important;
   }
-  .services-background, .hero-background {
+  .services-background {
     display: none !important;
   }
   /* Hero section mobile improvements */
