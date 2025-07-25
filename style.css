@@ -113,7 +113,17 @@ body {
     margin-top: 8px !important;
   }
   .video-overlay {
-    background: linear-gradient(180deg, rgba(39,68,114,0.75) 0%, rgba(39,68,114,0.45) 100%) !important;
+    background: linear-gradient(180deg, rgba(39,68,114,0.92) 0%, rgba(39,68,114,0.70) 100%) !important;
+  }
+  .parallax-section.hero header h1,
+  .parallax-section.hero header h3,
+  .parallax-section.hero header p {
+    color: #fff !important;
+    text-shadow: 0 2px 12px rgba(39,68,114,0.55), 0 1px 2px #222 !important;
+  }
+  .parallax-section.hero header a {
+    color: #e3f2fd !important;
+    text-shadow: 0 2px 8px rgba(39,68,114,0.45) !important;
   }
   nav {
     flex-direction: row;
@@ -131,6 +141,60 @@ body {
   nav ul li a {
     font-size: 0.98rem !important;
     padding: 6px 8px !important;
+  }
+  /* Contact section mobile improvements */
+  .contact-section {
+    padding: 16px 0 8px 0 !important;
+  }
+  .contact-container {
+    padding: 12px 2vw 8px 2vw !important;
+    border-radius: 10px !important;
+    box-shadow: 0 1px 6px rgba(39,68,114,0.08) !important;
+  }
+  .contact-container h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 14px !important;
+  }
+  .contact-info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-bottom: 18px !important;
+  }
+  .contact-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 12px 8px !important;
+    min-width: 0 !important;
+    font-size: 0.98rem !important;
+  }
+  .contact-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 4px !important;
+  }
+  .contact-card p, .contact-card a {
+    font-size: 0.95rem !important;
+  }
+  .contact-form {
+    padding: 12px 4vw 8px 4vw !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    margin-top: 10px !important;
+  }
+  .form-row {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  .form-group label {
+    font-size: 0.98rem !important;
+  }
+  .form-control {
+    font-size: 0.98rem !important;
+    padding: 8px 8px !important;
+  }
+  .btn {
+    font-size: 1rem !important;
+    padding: 10px 18px !important;
+    margin-top: 8px !important;
   }
 }
 
