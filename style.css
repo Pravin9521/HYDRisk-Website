@@ -456,7 +456,7 @@ header {
     z-index: 2;
     text-align: center;
     color: #fff;
-    margin-top: 40px;
+    margin: 40px 20px 40px 20px;
 }
 header h1 {
     font-size: 3rem;
@@ -517,6 +517,11 @@ h2 {
 .about-text {
     flex: 2 1 350px;
     min-width: 320px;
+    padding: 20px 30px;
+    background: #f0f4fa;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(39,68,114,0.1);
+    margin-right: 20px;
 }
 .about-image img {
     max-width: 340px;
@@ -1653,4 +1658,4 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-
+}
