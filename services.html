@@ -2,336 +2,258 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Services - HYDRisk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Advanced Flood Risk Solutions | HYDRisk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Services Page Styles */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f5f7fa;
-        color: #333;
-      }
-      nav {
-        background-color: #1a365d;
-        padding: 15px 30px;
-        display: flex;
-        align-items: center;
-      }
-      nav img.logo {
-        height: 40px;
-        margin-right: 20px;
-      }
-      nav ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
-      nav ul li {
-        margin-right: 25px;
-      }
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-      }
-      nav ul li a:hover {
-        text-decoration: underline;
-      }
-      .services-hero {
-        background: linear-gradient(135deg, #1a365d 0%, #274472 100%);
-        color: white;
-        padding: 80px 20px;
-        text-align: center;
-      }
-      .services-hero h1 {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
-      }
-      .services-hero p {
-        font-size: 1.3rem;
-        max-width: 700px;
-        margin: 0 auto 30px auto;
-      }
-      .services-hero .cta-button {
-        background: white;
-        color: #1a365d;
-        padding: 15px 40px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-      }
-      .services-hero .cta-button:hover {
-        background: #274472;
-        color: white;
-      }
-      .services-container {
-        max-width: 1200px;
-        margin: 60px auto;
-        padding: 0 20px;
-      }
-      .services-title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-      .services-title h2 {
-        font-size: 2.8rem;
-        color: #1a365d;
-        margin-bottom: 10px;
-      }
-      .services-title p {
-        font-size: 1.2rem;
-        color: #666;
-      }
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 40px;
-      }
-      .service-card {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-      .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(39, 68, 114, 0.2);
-      }
-      .service-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-      .service-card:hover .service-image {
-        transform: scale(1.1);
-      }
-      .service-content {
-        padding: 30px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .service-icon {
-        font-size: 3rem;
-        color: #1a365d;
-        margin-bottom: 15px;
-      }
-      .service-title {
-        font-size: 1.5rem;
-        color: #1a365d;
-        margin-bottom: 15px;
-      }
-      .service-description {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        flex-grow: 1;
-      }
-      .service-features {
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 20px;
-      }
-      .service-features li {
-        padding: 5px 0;
-        color: #555;
-        position: relative;
-        padding-left: 20px;
-      }
-      .service-features li:before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #1a365d;
-        font-weight: bold;
-      }
-      .service-cta {
-        display: inline-block;
-        background: #1a365d;
-        color: white;
-        padding: 12px 30px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        align-self: flex-start;
-      }
-      .service-cta:hover {
-        background: #274472;
-        transform: translateX(5px);
-      }
-      @media (max-width: 768px) {
-        .services-hero h1 {
-          font-size: 2.5rem;
-        }
-        .services-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-        .service-card {
-          margin: 0 20px;
-        }
-      }
-    </style>
   </head>
   <body>
-    <nav>
-      <img src="logo.jpg" alt="HYDRisk Logo" class="logo" />
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="services.html" aria-current="page">SERVICES</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="blog.html">BLOG</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <span>HYDRisk</span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-    <section class="services-hero">
-      <h1>Advanced Flood Risk Solutions</h1>
-      <p>
-        Comprehensive flood risk assessments and hydraulic modeling services for
-        sustainable development
-      </p>
-      <a href="#services" class="cta-button">Explore Our Services</a>
-    </section>
-    <section class="services-container" id="services">
-      <div class="services-title">
-        <h2>Our Comprehensive Services</h2>
-        <p>
-          Cutting-edge solutions for flood risk management and water resource
-          engineering
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="gradient-text">Advanced Flood Risk</span>
+          <br />Solutions
+        </h1>
+        <p class="hero-subtitle">
+          Comprehensive flood risk assessments and hydraulic modeling services
+          for sustainable development and infrastructure protection
         </p>
+        <a href="#services" class="btn btn-primary">Explore Our Services</a>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <img
-            src="flooded_solar.png"
-            alt="Flood Risk Assessment"
-            class="service-image"
-            loading="lazy"
-          />
-          <div class="service-content">
-            <span class="service-icon">🌊</span>
-            <h3 class="service-title">Flood Risk Assessments (FRA)</h3>
-            <p class="service-description">
-              Comprehensive flood risk studies for new developments and existing
-              infrastructure.
-            </p>
-            <ul class="service-features">
-              <li>Site-specific flood zone analysis</li>
-              <li>Rainfall-runoff modeling</li>
-              <li>Historical flood data integration</li>
-              <li>Risk mapping & mitigation strategies</li>
-            </ul>
-            <a href="service-fra.html" class="service-cta">Learn More</a>
-          </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Comprehensive Services</h2>
+          <p class="section-subtitle">
+            Cutting-edge solutions for flood risk management and water resource
+            engineering
+          </p>
         </div>
-        <div class="service-card">
-          <img
-            src="solar_infra.png"
-            alt="Hydraulic Modelling"
-            class="service-image"
-            loading="lazy"
-          />
-          <div class="service-content">
-            <span class="service-icon">💧</span>
-            <h3 class="service-title">Hydraulic Modelling</h3>
-            <p class="service-description">
-              Advanced simulation of water behavior in rivers, drainage systems,
-              and floodplains.
-            </p>
-            <ul class="service-features">
-              <li>1D/2D hydraulic modeling</li>
-              <li>Flow path simulations</li>
-              <li>Catchment area studies</li>
-              <li>Infrastructure impact analysis</li>
-            </ul>
-            <a href="service-hydraulic.html" class="service-cta">Learn More</a>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img
+                src="flooded_solar.png"
+                alt="Flood Risk Assessment"
+                class="service-image"
+              />
+              <div class="service-overlay">
+                <span class="service-icon">🌊</span>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Flood Risk Assessments (FRA)</h3>
+              <p class="service-description">
+                Comprehensive flood risk studies for new developments and
+                existing infrastructure.
+              </p>
+              <ul class="service-features">
+                <li>Site-specific flood zone analysis</li>
+                <li>Rainfall-runoff modeling</li>
+                <li>Historical flood data integration</li>
+                <li>Risk mapping & mitigation strategies</li>
+              </ul>
+              <a href="service-fra.html" class="btn btn-outline">Learn More</a>
+            </div>
           </div>
-        </div>
-        <div class="service-card">
-          <img
-            src="dam_video.mp4"
-            alt="Dam Break Analysis"
-            class="service-image"
-            style="object-fit: cover"
-            loading="lazy"
-          />
-          <div class="service-content">
-            <span class="service-icon">🏞️</span>
-            <h3 class="service-title">Dam Break & River Flood Modelling</h3>
-            <p class="service-description">
-              Critical analysis of dam breach scenarios and river flooding
-              impacts.
-            </p>
-            <ul class="service-features">
-              <li>Dam breach scenario modeling</li>
-              <li>Inundation mapping</li>
-              <li>Evacuation planning</li>
-              <li>Real-time propagation analysis</li>
-            </ul>
-            <a href="service-dam-break.html" class="service-cta">Learn More</a>
+
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img
+                src="solar_infra.png"
+                alt="Hydraulic Modelling"
+                class="service-image"
+              />
+              <div class="service-overlay">
+                <span class="service-icon">💧</span>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Hydraulic Modelling</h3>
+              <p class="service-description">
+                Advanced simulation of water behavior in rivers, drainage
+                systems, and floodplains.
+              </p>
+              <ul class="service-features">
+                <li>1D/2D hydraulic modeling</li>
+                <li>Flow path simulations</li>
+                <li>Catchment area studies</li>
+                <li>Infrastructure impact analysis</li>
+              </ul>
+              <a href="service-hydraulic.html" class="btn btn-outline"
+                >Learn More</a
+              >
+            </div>
           </div>
-        </div>
-        <div class="service-card">
-          <img
-            src="image.jpg"
-            alt="Climate Risk Analysis"
-            class="service-image"
-            loading="lazy"
-          />
-          <div class="service-content">
-            <span class="service-icon">☀️</span>
-            <h3 class="service-title">Climate Risk Flood Analysis</h3>
-            <p class="service-description">
-              Future climate change impact assessment on flood risk and
-              adaptation strategies.
-            </p>
-            <ul class="service-features">
-              <li>Climate scenario modeling</li>
-              <li>Sea-level rise assessments</li>
-              <li>Long-term risk mapping</li>
-              <li>Adaptation strategies</li>
-            </ul>
-            <a href="service-climate.html" class="service-cta">Learn More</a>
+
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img
+                src="dam_video.mp4"
+                alt="Dam Break Analysis"
+                class="service-image"
+              />
+              <div class="service-overlay">
+                <span class="service-icon">🏞️</span>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Dam Break & River Flood Modelling</h3>
+              <p class="service-description">
+                Critical analysis of dam breach scenarios and river flooding
+                impacts.
+              </p>
+              <ul class="service-features">
+                <li>Dam breach scenario modeling</li>
+                <li>Inundation mapping</li>
+                <li>Evacuation planning</li>
+                <li>Real-time propagation analysis</li>
+              </ul>
+              <a href="service-dam-break.html" class="btn btn-outline"
+                >Learn More</a
+              >
+            </div>
           </div>
-        </div>
-        <div class="service-card">
-          <img
-            src="solar_infra.png"
-            alt="Levelling and Grading"
-            class="service-image"
-            loading="lazy"
-          />
-          <div class="service-content">
-            <span class="service-icon">🏗️</span>
-            <h3 class="service-title">Levelling and Grading</h3>
-            <p class="service-description">
-              Land shaping for optimal water flow and stable foundations.
-            </p>
-            <ul class="service-features">
-              <li>Grading & earthwork calculations</li>
-              <li>Drainage optimization</li>
-              <li>Cut/fill optimization</li>
-              <li>Digital Terrain Modelling</li>
-            </ul>
-            <a href="service-grading.html" class="service-cta">Learn More</a>
+
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img
+                src="image.jpg"
+                alt="Climate Risk Analysis"
+                class="service-image"
+              />
+              <div class="service-overlay">
+                <span class="service-icon">☀️</span>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Climate Risk Flood Analysis</h3>
+              <p class="service-description">
+                Future climate change impact assessment on flood risk and
+                adaptation strategies.
+              </p>
+              <ul class="service-features">
+                <li>Climate scenario modeling</li>
+                <li>Sea-level rise assessments</li>
+                <li>Long-term risk mapping</li>
+                <li>Adaptation strategies</li>
+              </ul>
+              <a href="service-climate.html" class="btn btn-outline"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img
+                src="solar_infra.png"
+                alt="Levelling and Grading"
+                class="service-image"
+              />
+              <div class="service-overlay">
+                <span class="service-icon">🏗️</span>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Levelling and Grading</h3>
+              <p class="service-description">
+                Land shaping for optimal water flow and stable foundations.
+              </p>
+              <ul class="service-features">
+                <li>Grading & earthwork calculations</li>
+                <li>Drainage optimization</li>
+                <li>Cut/fill optimization</li>
+                <li>Digital Terrain Modelling</li>
+              </ul>
+              <a href="service-grading.html" class="btn btn-outline"
+                >Learn More</a
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Protect Your Assets?</h2>
+          <p>
+            Contact our experts for a comprehensive flood risk assessment
+            tailored to your needs.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Get Started Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>HYDRisk</h3>
+            <p>
+              Advanced flood risk management solutions for a safer tomorrow.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
+              <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
+              <li><a href="services.html">Flood Risk Assessment</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 HYDRisk. All rights reserved. | Advanced Flood Risk
+            Management Solutions
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

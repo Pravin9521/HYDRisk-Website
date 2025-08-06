@@ -1,126 +1,366 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blog - HYDRisk</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
-</head>
-<body>
-    <nav>
-        <img src="logo.jpg" class="logo" alt="HYDRisk Logo" />
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="services.html">SERVICES</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html" aria-current="page">BLOG</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-    </nav>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="header-top">
+        <div class="container">
+          <div class="header-info">
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+91-123-456-7890</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>info@hydrisk.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Mumbai, India</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <span>HYDRisk</span>
+            </a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <ul class="nav-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html" class="active">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+              <a href="contact.html" class="btn btn-primary">Get Quote</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <section class="blog-section">
-        <div class="blog-background">
-            <video autoplay loop muted playsinline class="blog-back-video">
-                <source src="water.mp4" type="video/mp4" />
-            </video>
-            <div class="blog-overlay"></div>
-        </div>
-        <div class="blog-container">
-            <h2>Our Blog</h2>
-            <p class="blog-intro">Stay updated with the latest insights, news, and tips from HYDRisk experts. Explore our blog posts below.</p>
-            <div class="blog-list">
-                <div class="blog-post">
-                    <div class="blog-card">
-                        <h3>Flood Risk Solar PV Plant and Mitigation</h3>
-                        <p class="blog-date">July 24, 2025</p>
-                        <div class="blog-summary blog-preview">
-                            As the world grapples with the impacts of climate change, it is experiencing an increase in the frequency and intensity of extreme weather events. Among these events, floods have emerged as a significant concern. Notably, solar photovoltaic (PV) plants are vulnerable to the detrimental effects of such floods, which can lead to operational disruptions and damage. In this blog post, we aim to delve into the risks faced by solar PV plants due to flooding while exploring potential mitigation measures.
-                            <span class="blog-preview-fade"></span>
-                        </div>
-                        <button class="read-more">Read More</button>
-                        <div class="blog-full-content">
-                            <h4>Flood Risk to Solar PV Plants</h4>
-                            <p>Solar PV plants are typically located in areas with ample sunlight and vast open spaces. However, these regions may also be susceptible to flooding, especially in low-lying areas or regions prone to intense precipitation or flash floods. When flooding occurs, a variety of issues can arise for solar PV facilities, including:</p>
-                            <ol>
-                                <li><b>Damage to solar panels:</b> Floodwaters can damage solar panels and other equipment in the plant. This damage can be caused by debris carried by the floodwaters, as well as by the force of the water itself.</li>
-                                <li><b>Disruption of electrical systems:</b> Floodwaters can also cause damage to the electrical systems that are used to transmit power from the solar PV plant to the grid. This can lead to power outages and disruptions in the delivery of electricity.</li>
-                                <li><b>Soil erosion:</b> Floodwaters can erode the soil around the solar PV plant, which can destabilize the foundation of the facility and lead to structural damage.</li>
-                                <li><b>Contamination of equipment:</b> Floodwaters can also carry sediment, debris, and other contaminants that can damage or contaminate the equipment at the solar PV plant. This can affect the performance and efficiency of the equipment, as well as the quality of the electricity that is generated.</li>
-                            </ol>
-                            <div style="text-align:center; margin: 20px 0;">
-                                <img src="flooded_solar.png" alt="Flood inside the Solar PV Plant" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);" />
-                                <div style="font-size:0.95em; color:#666; margin-top:4px;"><i>Fig. 1: Flood inside the Solar PV Plant (AI generated image)</i></div>
-                            </div>
-                            <h4>Mitigating Flood Risk to Solar PV Plants</h4>
-                            <p>There are several steps that can be taken to mitigate the risk that floods pose to solar PV plants. These include:</p>
-                            <ol>
-                                <li><b>Site selection:</b> One of the most effective ways to reduce the risk of flooding is to carefully select the location of the solar PV plant. This should include a thorough analysis of the site's flood history, as well as an assessment of the site's elevation, drainage, and proximity to water bodies.</li>
-                                <li><b>Design considerations:</b> Solar PV plants can be designed to withstand floods by incorporating features such as raised equipment platforms, flood barriers, and drainage systems. This can help to minimize the risk of damage to the facility and its equipment.</li>
-                                <li><b>Monitoring and maintenance:</b> Regular monitoring and maintenance of the solar PV plant can help to identify potential problems and address them before they become more serious. This can include regular inspections of the equipment, as well as the implementation of flood warning systems.</li>
-                                <li><b>Emergency response planning:</b> In the event of a flood, having a well-developed emergency response plan can help to minimize damage and ensure the safety of personnel at the solar PV plant. This can include procedures for shutting down equipment, evacuating the site, and responding to any environmental concerns.</li>
-                            </ol>
-                            <div style="text-align:center; margin: 20px 0;">
-                                <img src="solar_infra.png" alt="Solar Plant with proper infrastructure" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);" />
-                                <div style="font-size:0.95em; color:#666; margin-top:4px;"><i>Fig. 2: Solar Plant with proper infrastructure (AI generated image)</i></div>
-                            </div>
-                            <h4>Conclusion</h4>
-                            <p>Floods can pose a significant risk to solar PV plants, but with careful planning and design, this risk can be minimized. By carefully selecting the site of the plant, incorporating flood-resistant design features, and implementing robust monitoring and maintenance programs, solar PV plants can continue to operate effectively in the face of extreme weather events. Ultimately, the mitigation of flood risk to solar PV plants is essential to ensuring the long-term viability of renewable energy generation and the transition to a more sustainable future.</p>
-                        </div>
-                    </div>
+      <div class="blog-background">
+        <video autoplay loop muted playsinline class="blog-back-video">
+          <source src="water.mp4" type="video/mp4" />
+        </video>
+        <div class="blog-overlay"></div>
+      </div>
+      <div class="blog-container">
+        <h2>Our Blog</h2>
+        <p class="blog-intro">
+          Stay updated with the latest insights, news, and tips from HYDRisk
+          experts. Explore our blog posts below.
+        </p>
+        <div class="blog-list">
+          <div class="blog-post">
+            <div class="blog-card">
+              <h3>Flood Risk Solar PV Plant and Mitigation</h3>
+              <p class="blog-date">July 24, 2025</p>
+              <div class="blog-summary blog-preview">
+                As the world grapples with the impacts of climate change, it is
+                experiencing an increase in the frequency and intensity of
+                extreme weather events. Among these events, floods have emerged
+                as a significant concern. Notably, solar photovoltaic (PV)
+                plants are vulnerable to the detrimental effects of such floods,
+                which can lead to operational disruptions and damage. In this
+                blog post, we aim to delve into the risks faced by solar PV
+                plants due to flooding while exploring potential mitigation
+                measures.
+                <span class="blog-preview-fade"></span>
+              </div>
+              <button class="read-more">Read More</button>
+              <div class="blog-full-content">
+                <h4>Flood Risk to Solar PV Plants</h4>
+                <p>
+                  Solar PV plants are typically located in areas with ample
+                  sunlight and vast open spaces. However, these regions may also
+                  be susceptible to flooding, especially in low-lying areas or
+                  regions prone to intense precipitation or flash floods. When
+                  flooding occurs, a variety of issues can arise for solar PV
+                  facilities, including:
+                </p>
+                <ol>
+                  <li>
+                    <b>Damage to solar panels:</b> Floodwaters can damage solar
+                    panels and other equipment in the plant. This damage can be
+                    caused by debris carried by the floodwaters, as well as by
+                    the force of the water itself.
+                  </li>
+                  <li>
+                    <b>Disruption of electrical systems:</b> Floodwaters can
+                    also cause damage to the electrical systems that are used to
+                    transmit power from the solar PV plant to the grid. This can
+                    lead to power outages and disruptions in the delivery of
+                    electricity.
+                  </li>
+                  <li>
+                    <b>Soil erosion:</b> Floodwaters can erode the soil around
+                    the solar PV plant, which can destabilize the foundation of
+                    the facility and lead to structural damage.
+                  </li>
+                  <li>
+                    <b>Contamination of equipment:</b> Floodwaters can also
+                    carry sediment, debris, and other contaminants that can
+                    damage or contaminate the equipment at the solar PV plant.
+                    This can affect the performance and efficiency of the
+                    equipment, as well as the quality of the electricity that is
+                    generated.
+                  </li>
+                </ol>
+                <div style="text-align: center; margin: 20px 0">
+                  <img
+                    src="flooded_solar.png"
+                    alt="Flood inside the Solar PV Plant"
+                    style="
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 8px;
+                      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    "
+                  />
+                  <div style="font-size: 0.95em; color: #666; margin-top: 4px">
+                    <i
+                      >Fig. 1: Flood inside the Solar PV Plant (AI generated
+                      image)</i
+                    >
+                  </div>
                 </div>
-                <div class="blog-post">
-                    <div class="blog-card">
-                        <h3>Economic Loss Due to Flood Risk to Solar PV Plant in India: A Case Study</h3>
-                        <p class="blog-date">July 24, 2025</p>
-                        <div class="blog-summary blog-preview">
-                            This case study examines the real-life economic impact of the 2018 Kerala floods on a 5 MW solar PV plant, highlighting infrastructure damage, lost energy production, and missed revenue due to climate-induced flooding.
-                            <span class="blog-preview-fade"></span>
-                        </div>
-                        <button class="read-more">Read More</button>
-                        <div class="blog-full-content">
-                            <h4>Introduction</h4>
-                            <p>India, like many other countries, is susceptible to the adverse effects of climate change, including increased flood occurrences. The impact of floods on critical infrastructure, such as solar photovoltaic (PV) plants, can lead to substantial economic losses. This case study examines a real-life example of economic loss due to flood risk to a solar PV plant in India.</p>
-                            <h4>Case Study Details</h4>
-                            <ul>
-                                <li><b>Location:</b> Solar PV Plant in Kerala, India</li>
-                                <li><b>Date:</b> August 2018</li>
-                                <li><b>Duration of Flooding:</b> 10 days</li>
-                            </ul>
-                            <h4>Background</h4>
-                            <p>Kerala, a southern state in India, is prone to heavy monsoon rains and flooding. In August 2018, the state witnessed one of the worst flood events in its history. During this time, the region experienced unprecedented levels of rainfall, leading to widespread flooding and landslides.</p>
-                            <h4>Solar PV Plant</h4>
-                            <p>The case study focuses on a 5 MW solar PV plant located in the flood-affected region of Kerala. The solar plant had been operational for two years before the flood incident occurred, providing clean energy to the local grid.</p>
-                            <h4>Flood Event</h4>
-                            <p>Continuous heavy rainfall over a 10-day period resulted in severe flooding across Kerala. The solar PV plant site was inundated by floodwaters, submerging a significant portion of the plant infrastructure, including solar panels, inverters, and electrical components.</p>
-                            <h4>Economic Impact</h4>
-                            <ol>
-                                <li><b>Infrastructure Damage:</b> The floodwaters caused substantial damage to the solar panels, leading to corrosion and electrical short-circuits. The inverters and other electrical equipment were also affected by the inundation.</li>
-                                <li><b>Downtime and Energy Loss:</b> The flooded solar plant had to be shut down for safety reasons and to assess the damage. This led to a total energy production loss of approximately 400 megawatt-hours (MWh) during the 10-day flood period.</li>
-                                <li><b>Repair and Restoration Costs:</b> The repair and restoration efforts included replacing damaged solar panels, inverters, electrical components, and support structures. The total costs for these repairs amounted to INR 1.2 million.</li>
-                                <li><b>Opportunity Costs:</b> The downtime resulted in missed revenue opportunities. The solar plant's average daily revenue generation was approximately INR 75,000, translating to a total revenue loss of INR 750,000 during the 10-day flood period.</li>
-                            </ol>
-                            <h4>Total Economic Loss Calculation</h4>
-                            <ul>
-                                <li><b>Infrastructure Damage and Repair Costs:</b> INR 1.2 million</li>
-                                <li><b>Lost Energy Production:</b> 400 MWh * Market Price of Electricity</li>
-                                <li><b>Missed Revenue:</b> INR 750,000</li>
-                            </ul>
-                            <h4>Conclusion</h4>
-                            <p>The case study of the solar PV plant in Kerala, India, highlights the real economic impact of floods on renewable energy infrastructure. The combination of infrastructure damage, repair costs, lost energy production, and missed revenue underscores the need for comprehensive climate resilience strategies in the renewable energy sector. As climate change-induced extreme events become more frequent, such case studies emphasize the importance of incorporating adaptive measures to mitigate potential economic losses.</p>
-                            <h4>References</h4>
-                            <ol>
-                                <li>Government of Kerala, Disaster Management Authority. (2018). Kerala Floods 2018 - An Overview. <br />
-                                    <a href="https://sdma.kerala.gov.in/overview" target="_blank">https://sdma.kerala.gov.in/overview</a>
-                                </li>
-                                <li>Nair, A. (2020). Impacts of Climate Change on Power Sector: A Study on Solar Photovoltaic Power Plants. Journal of Sustainable Energy & Environment, 11, 19-28.</li>
-                            </ol>
-                        </div>
-                    </div>
+                <h4>Mitigating Flood Risk to Solar PV Plants</h4>
+                <p>
+                  There are several steps that can be taken to mitigate the risk
+                  that floods pose to solar PV plants. These include:
+                </p>
+                <ol>
+                  <li>
+                    <b>Site selection:</b> One of the most effective ways to
+                    reduce the risk of flooding is to carefully select the
+                    location of the solar PV plant. This should include a
+                    thorough analysis of the site's flood history, as well as an
+                    assessment of the site's elevation, drainage, and proximity
+                    to water bodies.
+                  </li>
+                  <li>
+                    <b>Design considerations:</b> Solar PV plants can be
+                    designed to withstand floods by incorporating features such
+                    as raised equipment platforms, flood barriers, and drainage
+                    systems. This can help to minimize the risk of damage to the
+                    facility and its equipment.
+                  </li>
+                  <li>
+                    <b>Monitoring and maintenance:</b> Regular monitoring and
+                    maintenance of the solar PV plant can help to identify
+                    potential problems and address them before they become more
+                    serious. This can include regular inspections of the
+                    equipment, as well as the implementation of flood warning
+                    systems.
+                  </li>
+                  <li>
+                    <b>Emergency response planning:</b> In the event of a flood,
+                    having a well-developed emergency response plan can help to
+                    minimize damage and ensure the safety of personnel at the
+                    solar PV plant. This can include procedures for shutting
+                    down equipment, evacuating the site, and responding to any
+                    environmental concerns.
+                  </li>
+                </ol>
+                <div style="text-align: center; margin: 20px 0">
+                  <img
+                    src="solar_infra.png"
+                    alt="Solar Plant with proper infrastructure"
+                    style="
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 8px;
+                      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    "
+                  />
+                  <div style="font-size: 0.95em; color: #666; margin-top: 4px">
+                    <i
+                      >Fig. 2: Solar Plant with proper infrastructure (AI
+                      generated image)</i
+                    >
+                  </div>
                 </div>
+                <h4>Conclusion</h4>
+                <p>
+                  Floods can pose a significant risk to solar PV plants, but
+                  with careful planning and design, this risk can be minimized.
+                  By carefully selecting the site of the plant, incorporating
+                  flood-resistant design features, and implementing robust
+                  monitoring and maintenance programs, solar PV plants can
+                  continue to operate effectively in the face of extreme weather
+                  events. Ultimately, the mitigation of flood risk to solar PV
+                  plants is essential to ensuring the long-term viability of
+                  renewable energy generation and the transition to a more
+                  sustainable future.
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="blog-post">
+            <div class="blog-card">
+              <h3>
+                Economic Loss Due to Flood Risk to Solar PV Plant in India: A
+                Case Study
+              </h3>
+              <p class="blog-date">July 24, 2025</p>
+              <div class="blog-summary blog-preview">
+                This case study examines the real-life economic impact of the
+                2018 Kerala floods on a 5 MW solar PV plant, highlighting
+                infrastructure damage, lost energy production, and missed
+                revenue due to climate-induced flooding.
+                <span class="blog-preview-fade"></span>
+              </div>
+              <button class="read-more">Read More</button>
+              <div class="blog-full-content">
+                <h4>Introduction</h4>
+                <p>
+                  India, like many other countries, is susceptible to the
+                  adverse effects of climate change, including increased flood
+                  occurrences. The impact of floods on critical infrastructure,
+                  such as solar photovoltaic (PV) plants, can lead to
+                  substantial economic losses. This case study examines a
+                  real-life example of economic loss due to flood risk to a
+                  solar PV plant in India.
+                </p>
+                <h4>Case Study Details</h4>
+                <ul>
+                  <li><b>Location:</b> Solar PV Plant in Kerala, India</li>
+                  <li><b>Date:</b> August 2018</li>
+                  <li><b>Duration of Flooding:</b> 10 days</li>
+                </ul>
+                <h4>Background</h4>
+                <p>
+                  Kerala, a southern state in India, is prone to heavy monsoon
+                  rains and flooding. In August 2018, the state witnessed one of
+                  the worst flood events in its history. During this time, the
+                  region experienced unprecedented levels of rainfall, leading
+                  to widespread flooding and landslides.
+                </p>
+                <h4>Solar PV Plant</h4>
+                <p>
+                  The case study focuses on a 5 MW solar PV plant located in the
+                  flood-affected region of Kerala. The solar plant had been
+                  operational for two years before the flood incident occurred,
+                  providing clean energy to the local grid.
+                </p>
+                <h4>Flood Event</h4>
+                <p>
+                  Continuous heavy rainfall over a 10-day period resulted in
+                  severe flooding across Kerala. The solar PV plant site was
+                  inundated by floodwaters, submerging a significant portion of
+                  the plant infrastructure, including solar panels, inverters,
+                  and electrical components.
+                </p>
+                <h4>Economic Impact</h4>
+                <ol>
+                  <li>
+                    <b>Infrastructure Damage:</b> The floodwaters caused
+                    substantial damage to the solar panels, leading to corrosion
+                    and electrical short-circuits. The inverters and other
+                    electrical equipment were also affected by the inundation.
+                  </li>
+                  <li>
+                    <b>Downtime and Energy Loss:</b> The flooded solar plant had
+                    to be shut down for safety reasons and to assess the damage.
+                    This led to a total energy production loss of approximately
+                    400 megawatt-hours (MWh) during the 10-day flood period.
+                  </li>
+                  <li>
+                    <b>Repair and Restoration Costs:</b> The repair and
+                    restoration efforts included replacing damaged solar panels,
+                    inverters, electrical components, and support structures.
+                    The total costs for these repairs amounted to INR 1.2
+                    million.
+                  </li>
+                  <li>
+                    <b>Opportunity Costs:</b> The downtime resulted in missed
+                    revenue opportunities. The solar plant's average daily
+                    revenue generation was approximately INR 75,000, translating
+                    to a total revenue loss of INR 750,000 during the 10-day
+                    flood period.
+                  </li>
+                </ol>
+                <h4>Total Economic Loss Calculation</h4>
+                <ul>
+                  <li>
+                    <b>Infrastructure Damage and Repair Costs:</b> INR 1.2
+                    million
+                  </li>
+                  <li>
+                    <b>Lost Energy Production:</b> 400 MWh * Market Price of
+                    Electricity
+                  </li>
+                  <li><b>Missed Revenue:</b> INR 750,000</li>
+                </ul>
+                <h4>Conclusion</h4>
+                <p>
+                  The case study of the solar PV plant in Kerala, India,
+                  highlights the real economic impact of floods on renewable
+                  energy infrastructure. The combination of infrastructure
+                  damage, repair costs, lost energy production, and missed
+                  revenue underscores the need for comprehensive climate
+                  resilience strategies in the renewable energy sector. As
+                  climate change-induced extreme events become more frequent,
+                  such case studies emphasize the importance of incorporating
+                  adaptive measures to mitigate potential economic losses.
+                </p>
+                <h4>References</h4>
+                <ol>
+                  <li>
+                    Government of Kerala, Disaster Management Authority. (2018).
+                    Kerala Floods 2018 - An Overview. <br />
+                    <a
+                      href="https://sdma.kerala.gov.in/overview"
+                      target="_blank"
+                      >https://sdma.kerala.gov.in/overview</a
+                    >
+                  </li>
+                  <li>
+                    Nair, A. (2020). Impacts of Climate Change on Power Sector:
+                    A Study on Solar Photovoltaic Power Plants. Journal of
+                    Sustainable Energy & Environment, 11, 19-28.
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>

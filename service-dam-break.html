@@ -283,26 +283,76 @@
     </style>
   </head>
   <body>
-    <nav>
-      <img src="logo.jpg" class="logo" alt="HYDRisk Logo" />
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="services.html">SERVICES</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="blog.html">BLOG</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-    </nav>
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="header-top">
+        <div class="container">
+          <div class="header-info">
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+91-123-456-7890</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>info@hydrisk.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Mumbai, India</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <span>HYDRisk</span>
+            </a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <ul class="nav-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html" class="active">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+              <a href="contact.html" class="btn btn-primary">Get Quote</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <section class="service-detail-hero">
       <video class="service-detail-video" autoplay muted loop playsinline>
         <source src="dam_video.mp4" type="video/mp4" />
       </video>
       <div class="service-detail-overlay"></div>
-      <a href="services-enhanced.html" class="back-button"
-        >← Back to Services</a
-      >
+      <a href="services.html" class="back-button">← Back to Services</a>
       <div class="service-detail-content">
         <h1>Dam Break & River Flood Modelling</h1>
         <p>
