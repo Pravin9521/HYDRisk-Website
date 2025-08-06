@@ -673,6 +673,13 @@ h2 {
     margin-bottom: 24px;
     letter-spacing: 1px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    font-weight: 900;
+}
+.services-content p {
+    color: #d0d7e0;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
 }
 /* Customizable columns: change --services-cols for desktop, --services-cols-tablet for tablet, --services-cols-mobile for mobile */
 .services-grid {
