@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dam Break & River Flood Modelling - HYDRisk</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Enhanced Service Detail Styles */
+      .service-detail-hero {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a365d 0%, #274472 100%);
+      }
+
+      .service-detail-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(0.4) saturate(1.2);
+      }
+
+      .service-detail-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(39, 68, 114, 0.8) 0%,
+          rgba(26, 54, 93, 0.9) 100%
+        );
+        z-index: 0;
+      }
+
+      .service-detail-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: white;
+        max-width: 900px;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .service-detail-content h1 {
+        font-size: 3.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .service-detail-content p {
+        font-size: 1.4rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+        line-height: 1.6;
+        animation: fadeInUp 1s ease-out 0.3s both;
+      }
+
+      .back-button {
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .service-detail-section {
+        padding: 100px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .service-detail-section h2 {
+        font-size: 2.5rem;
+        color: #1a365d;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .service-detail-section h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(135deg, #1a365d 0%, #274472 100%);
+        border-radius: 2px;
+      }
+
+      .service-detail-section p {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.8;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .service-features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin: 60px 0;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+        border: 1px solid #e9ecef;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(39, 68, 114, 0.2);
+      }
+
+      .feature-icon {
+        font-size: 3.5rem;
+        color: #1a365d;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .feature-card h3 {
+        font-size: 1.6rem;
+        color: #1a365d;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .feature-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 0;
+        font-size: 1rem;
+      }
+
+      .process-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 80px 0;
+        margin: 60px 0;
+        border-radius: 20px;
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .process-step {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+      }
+
+      .process-step::before {
+        content: attr(data-step);
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1a365d;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #1a365d 0%, #274472 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        margin-top: 80px;
+        border-radius: 20px;
+      }
+
+      .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: white;
+        color: #1a365d;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .service-detail-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .service-detail-content p {
+          font-size: 1.2rem;
+        }
+
+        .service-features-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .feature-card {
+          margin: 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="logo.jpg" class="logo" alt="HYDRisk Logo" />
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <section class="service-detail-hero">
+      <video class="service-detail-video" autoplay muted loop playsinline>
+        <source src="dam_video.mp4" type="video/mp4" />
+      </video>
+      <div class="service-detail-overlay"></div>
+      <a href="services-enhanced.html" class="back-button"
+        >← Back to Services</a
+      >
+      <div class="service-detail-content">
+        <h1>Dam Break & River Flood Modelling</h1>
+        <p>
+          Critical analysis of dam failure scenarios and downstream flooding
+          impacts for emergency planning and risk assessment
+        </p>
+      </div>
+    </section>
+
+    <section class="service-detail-section">
+      <h2>Comprehensive Dam Safety Analysis</h2>
+      <p>
+        We utilize state-of-the-art hydraulic modeling software to simulate dam
+        failure scenarios and provide accurate predictions for flood risk
+        assessment and emergency planning. Our advanced modeling capabilities
+        help identify potential failure modes and assess downstream impacts.
+      </p>
+
+      <div class="service-features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🏞️</span>
+          <h3>Dam Breach Analysis</h3>
+          <p>
+            Comprehensive simulation of dam failure scenarios including
+            overtopping, piping, and structural failure modes with detailed
+            breach parameter analysis
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🌊</span>
+          <h3>River Flood Modeling</h3>
+          <p>
+            Advanced 1D/2D hydraulic modeling of river systems to predict flood
+            wave propagation, peak discharges, and inundation extents
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🗺️</span>
+          <h3>Inundation Mapping</h3>
+          <p>
+            Detailed flood extent and depth mapping for emergency planning with
+            high-resolution topographic data integration
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3>Emergency Planning</h3>
+          <p>
+            Evacuation zone delineation, warning time analysis, and emergency
+            response planning for dam safety programs
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>Risk Assessment</h3>
+          <p>
+            Quantitative risk analysis including probability of failure,
+            consequence assessment, and risk reduction strategies
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔍</span>
+          <h3>Real-time Monitoring</h3>
+          <p>
+            Integration with monitoring systems for early warning and real-time
+            flood forecasting capabilities
+          </p>
+        </div>
+      </div>
+
+      <div class="process-section">
+        <h2>Our Analysis Process</h2>
+        <p>
+          We follow a systematic approach to dam break analysis ensuring
+          comprehensive coverage of all critical aspects
+        </p>
+
+        <div class="process-grid">
+          <div class="process-step" data-step="1">
+            <h3>Site Assessment</h3>
+            <p>
+              Comprehensive dam inspection and data collection including
+              structural analysis and hydrological review
+            </p>
+          </div>
+          <div class="process-step" data-step="2">
+            <h3>Breach Modeling</h3>
+            <p>
+              Detailed breach parameter analysis using industry-standard methods
+              and site-specific conditions
+            </p>
+          </div>
+          <div class="process-step" data-step="3">
+            <h3>Hydraulic Simulation</h3>
+            <p>
+              Advanced 1D/2D hydraulic modeling using HEC-RAS, MIKE, and other
+              specialized software
+            </p>
+          </div>
+          <div class="process-step" data-step="4">
+            <h3>Impact Analysis</h3>
+            <p>
+              Downstream impact assessment including population at risk,
+              infrastructure vulnerability, and economic losses
+            </p>
+          </div>
+          <div class="process-step" data-step="5">
+            <h3>Emergency Planning</h3>
+            <p>
+              Evacuation planning, warning system design, and emergency response
+              protocol development
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Software & Technology</h2>
+      <p>
+        We utilize industry-leading software packages to deliver accurate and
+        reliable results for dam safety analysis
+      </p>
+
+      <div class="service-features-grid">
+        <div class="feature-card">
+          <h3>HEC-RAS</h3>
+          <p>
+            US Army Corps of Engineers software for 1D/2D hydraulic modeling and
+            dam breach analysis
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>MIKE 11</h3>
+          <p>
+            DHI software for comprehensive river modeling and dam break
+            simulation
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>DAMBRK</h3>
+          <p>Specialized dam break flood routing software for rapid analysis</p>
+        </div>
+        <div class="feature-card">
+          <h3>GIS Integration</h3>
+          <p>
+            Advanced GIS tools for spatial analysis and mapping of flood impacts
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Ready to Assess Your Dam Safety?</h2>
+      <p>
+        Contact our experts for comprehensive dam break analysis and emergency
+        planning services
+      </p>
+      <a href="contact.html" class="cta-button">Get Started Today</a>
+    </section>
+  </body>
+</html>

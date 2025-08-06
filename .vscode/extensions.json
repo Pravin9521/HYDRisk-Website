@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ritwickdey.liveserver",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-eslint",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-json",
+    "ritwickdey.live-sass",
+    "syler.sass-indented",
+    "ms-vscode.vscode-css-peek"
+  ]
+}
