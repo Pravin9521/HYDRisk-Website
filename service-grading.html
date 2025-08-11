@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Levelling and Grading - HYDRisk</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="enhanced-header.css" />
+    <link rel="stylesheet" href="enhanced-footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
       .service-detail-hero {
         position: relative;
@@ -36,7 +42,7 @@
       }
 
       .service-detail-section {
-        padding: 40px 0;
+        padding: 80px 0;
         max-width: 1200px;
         margin: 0 auto;
         padding-left: 20px;
@@ -114,68 +120,31 @@
     </style>
   </head>
   <body>
-    <!-- Header Section -->
-    <header class="site-header">
-      <div class="header-top">
-        <div class="container">
-          <div class="header-info">
-            <div class="info-item">
-              <i class="fas fa-phone"></i>
-              <span>+91-123-456-7890</span>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-envelope"></i>
-              <span>info@hydrisk.com</span>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Mumbai, India</span>
-            </div>
-          </div>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
-        </div>
+    <!-- Enhanced Header Section -->
+    <header class="enhanced-header">
+      <div class="header-container">
+        <a href="index.html" class="header-logo">
+          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <span class="logo-text">HYDRisk</span>
+        </a>
+
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="cta-button">Get Quote</a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-
-      <nav class="main-nav">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="index.html" class="logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
-              <span>HYDRisk</span>
-            </a>
-
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-
-            <ul class="nav-menu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html" class="active">Services</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-cta">
-              <a href="contact.html" class="btn btn-primary">Get Quote</a>
-            </div>
-          </div>
-        </div>
-      </nav>
     </header>
 
     <section class="service-detail-hero">
@@ -236,5 +205,96 @@
       </p>
       <a href="contact.html" class="cta-button">Get Started Today</a>
     </section>
+
+    <!-- Enhanced Footer Section -->
+    <footer class="enhanced-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <h3>HYDRisk</h3>
+            </div>
+            <p class="footer-description">
+              Leading global consulting firm for flood risk assessment and
+              management solutions. Protecting your assets with cutting-edge
+              technology and expertise.
+            </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>About HYDRisk</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Mission & Vision</a></li>
+              <li><a href="about.html">Our Goals</a></li>
+              <li><a href="about.html">Expert Team</a></li>
+              <li><a href="about.html">IIT Alumni Network</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
+              <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
+              <li><a href="service-fra.html">Flood Risk Assessment</a></li>
+              <li><a href="service-climate.html">Climate Risk Analysis</a></li>
+              <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="services.html">View All Services</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-container">
+            <div class="footer-bottom-content">
+              <p>&copy; 2024 HYDRisk. All rights reserved.</p>
+              <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
   </body>
 </html>

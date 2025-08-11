@@ -11,9 +11,469 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="enhanced-header.css" />
+    <link rel="stylesheet" href="enhanced-footer.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #1a365d;
+        --secondary-color: #274472;
+        --accent-color: #4299e1;
+        --text-color: #2d3748;
+        --light-text: #718096;
+        --background: #ffffff;
+        --light-background: #f7fafc;
+        --border-color: #e2e8f0;
+        --gradient-primary: linear-gradient(135deg, #1a365d 0%, #274472 100%);
+        --gradient-accent: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background);
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation - Matching contact.html */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow-md);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+        gap: 0.5rem;
+      }
+
+      .nav-logo:hover {
+        transform: scale(1.05);
+      }
+
+      .nav-logo img {
+        height: 40px;
+        border-radius: 8px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin-left: auto;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 0.5rem 0;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color);
+        transform: translateY(-2px);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-accent);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link.active {
+        color: var(--accent-color);
+      }
+
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      /* Hero Section with Background Video */
+      .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+        margin-top: 0;
+      }
+
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(26, 54, 93, 0.7) 0%,
+          rgba(39, 68, 114, 0.7) 100%
+        );
+        z-index: -1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        background: var(--gradient-accent);
+        color: white;
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Services Section */
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.125rem;
+        color: var(--light-text);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .service-image-wrapper {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .service-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover .service-image {
+        transform: scale(1.05);
+      }
+
+      .service-content {
+        padding: 2rem;
+      }
+
+      .service-title {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .service-description {
+        color: var(--light-text);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .service-features {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+
+      .service-features li {
+        padding: 0.5rem 0;
+        color: var(--light-text);
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .service-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+        font-weight: bold;
+      }
+
+      .service-link {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: var(--gradient-accent);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .service-link:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Enhanced service card styling */
+      .service-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s ease;
+        position: relative;
+        border: 1px solid var(--border-color);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--accent-color);
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient-accent);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .service-image-wrapper {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .service-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .service-card:hover .service-image {
+        transform: scale(1.1);
+      }
+
+      .service-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(26, 54, 93, 0.8),
+          rgba(39, 68, 114, 0.8)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .service-image-wrapper:hover .service-overlay {
+        opacity: 1;
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        color: white;
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+      }
+
+      .service-image-wrapper:hover .service-icon {
+        transform: scale(1);
+      }
+
+      /* Footer - Matching contact.html */
+      .footer {
+        background: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 4rem;
+      }
+
+      .footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-container {
+          padding: 1rem;
+        }
+
+        .nav-menu {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .hero {
+          padding: 100px 1rem 60px;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .section {
+          padding: 3rem 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Navigation - Matching contact.html -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
@@ -31,8 +491,13 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Video -->
     <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="water.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title">
           <span class="gradient-text">Advanced Flood Risk</span>
@@ -47,7 +512,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section services">
+    <section id="services" class="section">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our Comprehensive Services</h2>
@@ -59,201 +524,215 @@
 
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-image-wrapper">
-              <img
-                src="flooded_solar.png"
-                alt="Flood Risk Assessment"
-                class="service-image"
-              />
-              <div class="service-overlay">
-                <span class="service-icon">🌊</span>
+            <a href="service-fra.html" class="service-link-wrapper">
+              <div class="service-image-wrapper">
+                <img
+                  src="flooded_solar.png"
+                  alt="Flood Risk Assessment"
+                  class="service-image"
+                />
               </div>
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">Flood Risk Assessments (FRA)</h3>
-              <p class="service-description">
-                Comprehensive flood risk studies for new developments and
-                existing infrastructure.
-              </p>
-              <ul class="service-features">
-                <li>Site-specific flood zone analysis</li>
-                <li>Rainfall-runoff modeling</li>
-                <li>Historical flood data integration</li>
-                <li>Risk mapping & mitigation strategies</li>
-              </ul>
-              <a href="service-fra.html" class="btn btn-outline">Learn More</a>
-            </div>
+              <div class="service-content">
+                <h3 class="service-title">Flood Risk Assessments (FRA)</h3>
+                <p class="service-description">
+                  Comprehensive flood risk studies for new developments and
+                  existing infrastructure.
+                </p>
+                <ul class="service-features">
+                  <li>Site-specific flood zone analysis</li>
+                  <li>Rainfall-runoff modeling</li>
+                  <li>Historical flood data integration</li>
+                  <li>Risk mapping & mitigation strategies</li>
+                </ul>
+              </div>
+            </a>
           </div>
 
           <div class="service-card">
-            <div class="service-image-wrapper">
-              <img
-                src="solar_infra.png"
-                alt="Hydraulic Modelling"
-                class="service-image"
-              />
-              <div class="service-overlay">
-                <span class="service-icon">💧</span>
+            <a href="service-hydraulic.html" class="service-link-wrapper">
+              <div class="service-image-wrapper">
+                <img
+                  src="solar_infra.png"
+                  alt="Hydraulic Modelling"
+                  class="service-image"
+                />
               </div>
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">Hydraulic Modelling</h3>
-              <p class="service-description">
-                Advanced simulation of water behavior in rivers, drainage
-                systems, and floodplains.
-              </p>
-              <ul class="service-features">
-                <li>1D/2D hydraulic modeling</li>
-                <li>Flow path simulations</li>
-                <li>Catchment area studies</li>
-                <li>Infrastructure impact analysis</li>
-              </ul>
-              <a href="service-hydraulic.html" class="btn btn-outline"
-                >Learn More</a
-              >
-            </div>
+              <div class="service-content">
+                <h3 class="service-title">Hydraulic Modelling</h3>
+                <p class="service-description">
+                  Advanced simulation of water behavior in rivers, drainage
+                  systems, and floodplains.
+                </p>
+                <ul class="service-features">
+                  <li>1D/2D hydraulic modeling</li>
+                  <li>Flow path simulations</li>
+                  <li>Catchment area studies</li>
+                  <li>Infrastructure impact analysis</li>
+                </ul>
+              </div>
+            </a>
           </div>
 
           <div class="service-card">
-            <div class="service-image-wrapper">
-              <img
-                src="dam_video.mp4"
-                alt="Dam Break Analysis"
-                class="service-image"
-              />
-              <div class="service-overlay">
-                <span class="service-icon">🏞️</span>
+            <a href="service-dam-break.html" class="service-link-wrapper">
+              <div class="service-image-wrapper">
+                <img
+                  src="dam_video.mp4"
+                  alt="Dam Break Analysis"
+                  class="service-image"
+                />
               </div>
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">Dam Break & River Flood Modelling</h3>
-              <p class="service-description">
-                Critical analysis of dam breach scenarios and river flooding
-                impacts.
-              </p>
-              <ul class="service-features">
-                <li>Dam breach scenario modeling</li>
-                <li>Inundation mapping</li>
-                <li>Evacuation planning</li>
-                <li>Real-time propagation analysis</li>
-              </ul>
-              <a href="service-dam-break.html" class="btn btn-outline"
-                >Learn More</a
-              >
-            </div>
+              <div class="service-content">
+                <h3 class="service-title">Dam Break & River Flood Modelling</h3>
+                <p class="service-description">
+                  Critical analysis of dam breach scenarios and river flooding
+                  impacts.
+                </p>
+                <ul class="service-features">
+                  <li>Dam breach scenario modeling</li>
+                  <li>Inundation mapping</li>
+                  <li>Evacuation planning</li>
+                  <li>Real-time propagation analysis</li>
+                </ul>
+              </div>
+            </a>
           </div>
 
           <div class="service-card">
-            <div class="service-image-wrapper">
-              <img
-                src="image.jpg"
-                alt="Climate Risk Analysis"
-                class="service-image"
-              />
-              <div class="service-overlay">
-                <span class="service-icon">☀️</span>
+            <a href="service-climate.html" class="service-link-wrapper">
+              <div class="service-image-wrapper">
+                <img
+                  src="image.jpg"
+                  alt="Climate Risk Analysis"
+                  class="service-image"
+                />
               </div>
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">Climate Risk Flood Analysis</h3>
-              <p class="service-description">
-                Future climate change impact assessment on flood risk and
-                adaptation strategies.
-              </p>
-              <ul class="service-features">
-                <li>Climate scenario modeling</li>
-                <li>Sea-level rise assessments</li>
-                <li>Long-term risk mapping</li>
-                <li>Adaptation strategies</li>
-              </ul>
-              <a href="service-climate.html" class="btn btn-outline"
-                >Learn More</a
-              >
-            </div>
+              <div class="service-content">
+                <h3 class="service-title">Climate Risk Flood Analysis</h3>
+                <p class="service-description">
+                  Future climate change impact assessment on flood risk and
+                  adaptation strategies.
+                </p>
+                <ul class="service-features">
+                  <li>Climate scenario modeling</li>
+                  <li>Sea-level rise assessments</li>
+                  <li>Long-term risk mapping</li>
+                  <li>Adaptation strategies</li>
+                </ul>
+              </div>
+            </a>
           </div>
 
           <div class="service-card">
-            <div class="service-image-wrapper">
-              <img
-                src="solar_infra.png"
-                alt="Levelling and Grading"
-                class="service-image"
-              />
-              <div class="service-overlay">
-                <span class="service-icon">🏗️</span>
+            <a href="service-grading.html" class="service-link-wrapper">
+              <div class="service-image-wrapper">
+                <img
+                  src="solar_infra.png"
+                  alt="Levelling and Grading"
+                  class="service-image"
+                />
               </div>
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">Levelling and Grading</h3>
-              <p class="service-description">
-                Land shaping for optimal water flow and stable foundations.
-              </p>
-              <ul class="service-features">
-                <li>Grading & earthwork calculations</li>
-                <li>Drainage optimization</li>
-                <li>Cut/fill optimization</li>
-                <li>Digital Terrain Modelling</li>
-              </ul>
-              <a href="service-grading.html" class="btn btn-outline"
-                >Learn More</a
-              >
-            </div>
+              <div class="service-content">
+                <h3 class="service-title">Levelling and Grading</h3>
+                <p class="service-description">
+                  Land shaping for optimal water flow and stable foundations.
+                </p>
+                <ul class="service-features">
+                  <li>Grading & earthwork calculations</li>
+                  <li>Drainage optimization</li>
+                  <li>Cut/fill optimization</li>
+                  <li>Digital Terrain Modelling</li>
+                </ul>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Ready to Protect Your Assets?</h2>
-          <p>
-            Contact our experts for a comprehensive flood risk assessment
-            tailored to your needs.
-          </p>
-          <a href="contact.html" class="btn btn-primary">Get Started Today</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>HYDRisk</h3>
-            <p>
-              Advanced flood risk management solutions for a safer tomorrow.
+    <!-- Footer - Matching contact.html -->
+    <footer class="enhanced-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <h3>HYDRisk</h3>
+            </div>
+            <p class="footer-description">
+              Leading global consulting firm for flood risk assessment and
+              management solutions. Protecting your assets with cutting-edge
+              technology and expertise.
             </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+            </div>
           </div>
+
+          <div class="footer-section">
+            <h4>About HYDRisk</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Mission & Vision</a></li>
+              <li><a href="about.html">Our Goals</a></li>
+              <li><a href="about.html">Expert Team</a></li>
+              <li><a href="about.html">IIT Alumni Network</a></li>
+            </ul>
+          </div>
+
           <div class="footer-section">
             <h4>Quick Links</h4>
-            <ul>
+            <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="about.html">About Us</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
+
           <div class="footer-section">
-            <h4>Services</h4>
-            <ul>
+            <h4>Our Services</h4>
+            <ul class="footer-links">
               <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
               <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
-              <li><a href="services.html">Flood Risk Assessment</a></li>
+              <li><a href="service-fra.html">Flood Risk Assessment</a></li>
+              <li><a href="service-climate.html">Climate Risk Analysis</a></li>
+              <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="services.html">View All Services</a></li>
             </ul>
           </div>
         </div>
+
         <div class="footer-bottom">
-          <p>
-            &copy; 2024 HYDRisk. All rights reserved. | Advanced Flood Risk
-            Management Solutions
-          </p>
+          <div class="footer-container">
+            <div class="footer-bottom-content">
+              <p>&copy; 2024 HYDRisk. All rights reserved.</p>
+              <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
