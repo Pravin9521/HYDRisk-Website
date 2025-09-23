@@ -10,453 +10,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --primary-color: #1a365d;
-        --secondary-color: #274472;
-        --accent-color: #4299e1;
-        --text-color: #2d3748;
-        --light-text: #718096;
-        --background: #ffffff;
-        --light-background: #f7fafc;
-        --border-color: #e2e8f0;
-        --gradient-primary: linear-gradient(135deg, #1a365d 0%, #274472 100%);
-        --gradient-accent: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
-        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-        --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      body {
-        font-family:
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--background);
-        overflow-x: hidden;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Navigation */
-      .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: var(--shadow-md);
-        z-index: 1000;
-        transition: all 0.3s ease;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      .nav-logo {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: var(--primary-color);
-        font-weight: 700;
-        font-size: 1.5rem;
-        transition: transform 0.3s ease;
-        gap: 0.5rem;
-      }
-
-      .nav-logo:hover {
-        transform: scale(1.05);
-      }
-
-      .nav-logo img {
-        height: 40px;
-        border-radius: 8px;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-        margin-left: auto;
-      }
-
-      .nav-link {
-        text-decoration: none;
-        color: var(--primary-color);
-        font-weight: 500;
-        transition: all 0.3s ease;
-        position: relative;
-        padding: 0.5rem 0;
-      }
-
-      .nav-link:hover {
-        color: var(--accent-color);
-        transform: translateY(-2px);
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--gradient-accent);
-        transition: width 0.3s ease;
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      /* Hero Section */
-      .hero {
-        position: relative;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-        overflow: hidden;
-      }
-
-      #background-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(26, 54, 93, 0.85),
-          rgba(39, 68, 114, 0.75)
-        );
-        z-index: 2;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 3;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-        padding: 0 20px;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hero-title {
-        font-family: "Playfair Display", serif;
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-      }
-
-      .gradient-text {
-        background: linear-gradient(135deg, #4299e1, #667eea);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .hero-subtitle {
-        font-size: 1.25rem;
-        margin-bottom: 2.5rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-      }
-
-      .btn-primary {
-        background: var(--gradient-accent);
-        color: white;
-        box-shadow: var(--shadow-lg);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-xl);
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: white;
-        border: 2px solid white;
-      }
-
-      .btn-secondary:hover {
-        background: white;
-        color: var(--primary-color);
-        transform: translateY(-3px);
-      }
-
-      /* Sections */
-      .section {
-        padding: 5rem 0;
-      }
-
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 3rem;
-        color: var(--primary-color);
-      }
-
-      /* About Section */
-      .about {
-        background: var(--light-background);
-      }
-
-      .about-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .about-text {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-color);
-      }
-
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .feature {
-        background: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: var(--shadow-md);
-        transition: transform 0.3s ease;
-      }
-
-      .feature:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .feature h3 {
-        color: var(--primary-color);
-        margin-bottom: 0.5rem;
-      }
-
-      /* Services Section */
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .service-card {
-        background: white;
-        padding: 2.5rem;
-        border-radius: 20px;
-        box-shadow: var(--shadow-md);
-        transition: all 0.3s ease;
-        border: 1px solid var(--border-color);
-      }
-
-      .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-xl);
-        border-color: var(--accent-color);
-      }
-
-      .service-card h3 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .service-card p {
-        color: var(--light-text);
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-      }
-
-      .service-link {
-        color: var(--accent-color);
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-      }
-
-      .service-link:hover {
-        color: var(--primary-color);
-      }
-
-      /* Contact Section */
-      .contact {
-        background: var(--gradient-primary);
-        color: white;
-      }
-
-      .contact .section-title {
-        color: white;
-      }
-
-      .contact-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: start;
-      }
-
-      .contact-info h3 {
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-      }
-
-      .contact-info p {
-        margin-bottom: 1rem;
-        opacity: 0.9;
-      }
-
-      .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        padding: 1rem;
-        border: none;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-family: inherit;
-      }
-
-      .contact-form input:focus,
-      .contact-form textarea:focus {
-        outline: 2px solid var(--accent-color);
-      }
-
-      /* Footer */
-      .footer {
-        background: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 2rem 0;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .about-content,
-        .contact-content {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .hero-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .nav-menu {
-          flex-direction: column;
-          gap: 1rem;
-        }
-      }
-
-      /* Scroll animations */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/sections.css" />
+    <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/components/navigation.css" />`n    <link rel="stylesheet" href="styles/components/impact.css" />
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
-        <a href="#" class="nav-logo">
+        <a href="index.html" class="nav-logo">
           <img src="logo.jpg" alt="HYDRisk Logo" />
           <span>HYDRisk</span>
         </a>
@@ -468,14 +37,38 @@
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <span>HYDRisk</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+
+     <!-- Hero Section -->
     <section id="home" class="hero">
-      <video autoplay muted loop id="background-video">
+      <video autoplay muted playsinline loop class="hero-video">
         <source src="dam_video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
+      </video>
+      <video autoplay muted playsinline loop class="hero-video-mobile">
+        <source src="dam_video_mobile.mp4" type="video/mp4" />
       </video>
       <div class="hero-content">
         <h1 class="hero-title">
@@ -493,13 +86,12 @@
         </div>
       </div>
     </section>
-
     <!-- About Section -->
-    <section id="about" class="section about">
+    <section id="about" class="section about-section">
       <div class="container">
         <h2 class="section-title">About HYDRisk</h2>
-        <div class="about-content">
-          <div class="about-text">
+        <div class="about-grid">
+          <div class="about-content">
             <p>
               HYDRisk specializes in providing comprehensive flood risk
               management solutions using advanced technology and data-driven
@@ -507,18 +99,221 @@
               cutting-edge tools to deliver accurate risk assessments and
               effective mitigation strategies.
             </p>
-            <div class="features">
-              <div class="feature">
-                <h3>Predictive Modeling</h3>
-                <p>Advanced algorithms for accurate flood prediction</p>
+            <p>
+              Our mission is to empower clients with the knowledge and tools to
+              understand, mitigate, and adapt to flood challenges. We combine
+              cutting-edge technology with profound expertise to deliver
+              accurate, reliable, and actionable insights.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="image.jpg" alt="HYDRisk Team at Work" />
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature">
+            <i class="fas fa-chart-line feature-icon"></i>
+            <h3>Predictive Modeling</h3>
+            <p>Advanced algorithms for accurate flood prediction and risk assessment</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-satellite-dish feature-icon"></i>
+            <h3>Real-time Monitoring</h3>
+            <p>24/7 surveillance and alert systems with automated notifications</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-clipboard-check feature-icon"></i>
+            <h3>Risk Assessment</h3>
+            <p>Comprehensive analysis and detailed reporting for informed decisions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          Comprehensive flood risk management solutions tailored to your needs
+        </p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img src="image.jpg" alt="Dam Break Analysis" class="service-image" />
+              <div class="service-overlay">
+                <i class="fas fa-dam service-icon"></i>
               </div>
-              <div class="feature">
-                <h3>Real-time Monitoring</h3>
-                <p>24/7 surveillance and alert systems</p>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Dam Break Analysis</h3>
+              <p class="service-description">
+                Comprehensive dam break modeling and impact assessment using
+                advanced hydraulic simulation tools and GIS technology.
+              </p>
+              <ul class="service-features">
+                <li>Hydraulic modeling and simulation</li>
+                <li>Impact assessment and mapping</li>
+                <li>Emergency response planning</li>
+              </ul>
+              <a href="service-dam-break.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img src="image.jpg" alt="Flood Risk Assessment" class="service-image" />
+              <div class="service-overlay">
+                <i class="fas fa-water service-icon"></i>
               </div>
-              <div class="feature">
-                <h3>Risk Assessment</h3>
-                <p>Comprehensive analysis and reporting</p>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Flood Risk Assessment</h3>
+              <p class="service-description">
+                Detailed flood risk analysis for infrastructure projects, urban
+                planning, and insurance purposes using cutting-edge technology.
+              </p>
+              <ul class="service-features">
+                <li>Probabilistic flood modeling</li>
+                <li>Vulnerability assessment</li>
+                <li>Risk mitigation strategies</li>
+              </ul>
+              <a href="services.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img src="image.jpg" alt="Hydraulic Modeling" class="service-image" />
+              <div class="service-overlay">
+                <i class="fas fa-project-diagram service-icon"></i>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Hydraulic Modeling</h3>
+              <p class="service-description">
+                Advanced hydraulic modeling for rivers, channels, and floodplains
+                using state-of-the-art software and computational methods.
+              </p>
+              <ul class="service-features">
+                <li>1D and 2D flow modeling</li>
+                <li>Sediment transport analysis</li>
+                <li>Design flood estimation</li>
+              </ul>
+              <a href="service-hydraulic.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img src="image.jpg" alt="Real-time Monitoring" class="service-image" />
+              <div class="service-overlay">
+                <i class="fas fa-broadcast-tower service-icon"></i>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Real-time Monitoring</h3>
+              <p class="service-description">
+                Continuous monitoring systems with automated alerts and
+                comprehensive data analysis for proactive flood management.
+              </p>
+              <ul class="service-features">
+                <li>IoT sensor networks</li>
+                <li>Automated alert systems</li>
+                <li>Data analytics and reporting</li>
+              </ul>
+              <a href="services.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section impact-section">
+      <div class="container">
+        <h2 class="section-title">Our Impact</h2>
+        <p class="section-subtitle">
+          Making a real difference in flood risk management worldwide
+        </p>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="impact-icon-wrapper">
+              <i class="fas fa-shield-alt impact-icon"></i>
+              <div class="impact-counter" data-target="2500000">0</div>
+            </div>
+            <h3 class="impact-title">Lives Protected</h3>
+            <p class="impact-description">
+              Through early warning systems and risk assessments, we've helped protect over 2.5 million people from flood disasters
+            </p>
+            <div class="impact-metric">
+              <span class="metric-label">Population safeguarded</span>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper">
+              <i class="fas fa-dollar-sign impact-icon"></i>
+              <div class="impact-counter" data-target="50">0</div>
+              <span class="impact-unit">B+</span>
+            </div>
+            <h3 class="impact-title">Assets Protected</h3>
+            <p class="impact-description">
+              Over $50 billion in critical infrastructure and assets secured through our flood risk management solutions
+            </p>
+            <div class="impact-metric">
+              <span class="metric-label">Economic value preserved</span>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper">
+              <i class="fas fa-leaf impact-icon"></i>
+              <div class="impact-counter" data-target="1000">0</div>
+              <span class="impact-unit">MW</span>
+            </div>
+            <h3 class="impact-title">Clean Energy Secured</h3>
+            <p class="impact-description">
+              Protected over 1,000 MW of solar and renewable energy capacity from flood damage through strategic planning
+            </p>
+            <div class="impact-metric">
+              <span class="metric-label">Sustainable energy preserved</span>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper">
+              <i class="fas fa-globe-asia impact-icon"></i>
+              <div class="impact-counter" data-target="35">0</div>
+              <span class="impact-unit">+</span>
+            </div>
+            <h3 class="impact-title">Countries Served</h3>
+            <p class="impact-description">
+              Delivered flood risk solutions across 35+ countries, adapting to diverse geographical and climatic conditions
+            </p>
+            <div class="impact-metric">
+              <span class="metric-label">Global flood resilience</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-summary">
+          <div class="summary-content">
+            <h3>Real Impact, Real Results</h3>
+            <p>
+              Our work goes beyond numbers. We help communities build resilience, protect critical infrastructure,
+              and ensure sustainable development in the face of increasing flood risks due to climate change.
+            </p>
+            <div class="summary-stats">
+              <div class="summary-stat">
+                <span class="stat-number">99.7%</span>
+                <span class="stat-label">Accuracy Rate</span>
+              </div>
+              <div class="summary-stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Monitoring Support</span>
+              </div>
+              <div class="summary-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years of Excellence</span>
               </div>
             </div>
           </div>
@@ -526,64 +321,21 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section services">
-      <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <h3>Dam Break Analysis</h3>
-            <p>
-              Comprehensive dam break modeling and impact assessment using
-              advanced hydraulic simulation tools.
-            </p>
-            <a href="service-dam-break.html" class="service-link"
-              >Learn More →</a
-            >
-          </div>
-          <div class="service-card">
-            <h3>Flood Risk Assessment</h3>
-            <p>
-              Detailed flood risk analysis for infrastructure projects, urban
-              planning, and insurance purposes.
-            </p>
-            <a href="services.html" class="service-link">Learn More →</a>
-          </div>
-          <div class="service-card">
-            <h3>Hydraulic Modeling</h3>
-            <p>
-              Advanced hydraulic modeling for rivers, channels, and floodplains
-              using state-of-the-art software.
-            </p>
-            <a href="service-hydraulic.html" class="service-link"
-              >Learn More →</a
-            >
-          </div>
-          <div class="service-card">
-            <h3>Real-time Monitoring</h3>
-            <p>
-              Continuous monitoring systems with automated alerts and
-              comprehensive data analysis.
-            </p>
-            <a href="services.html" class="service-link">Learn More →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact-section">
       <div class="container">
         <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
+        <p class="section-subtitle">
+          Ready to protect your assets from flood risks? Contact us today for a consultation.
+        </p>
+        <div class="contact-grid">
           <div class="contact-info">
             <h3>Contact Information</h3>
-            <p><strong>Email:</strong> info@hydrisk.com</p>
-            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-            <p>
-              <strong>Address:</strong> 123 Flood Management Way, Water City, WC
-              12345
-            </p>
+            <div class="contact-info">
+              <p><i class="fas fa-envelope"></i> info@hydrisk.com</p>
+              <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Flood Management Way, Water City, WC 12345</p>
+            </div>
           </div>
           <form class="contact-form">
             <input type="text" placeholder="Your Name" required />
@@ -595,61 +347,121 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Enhanced Footer -->
     <footer class="footer">
-      <div class="container">
-        <p>
-          &copy; 2024 HYDRisk. All rights reserved. | Advanced Flood Risk
-          Management Solutions
-        </p>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <h3>HYDRisk</h3>
+            </div>
+            <p class="footer-description">
+              Leading global consulting firm for flood risk assessment and
+              management solutions. Protecting your assets with cutting-edge
+              technology and expertise.
+            </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>About HYDRisk</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Mission & Vision</a></li>
+              <li><a href="about.html">Our Goals</a></li>
+              <li><a href="about.html">Expert Team</a></li>
+              <li><a href="about.html">IIT Alumni Network</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
+              <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
+              <li><a href="service-fra.html">Flood Risk Assessment</a></li>
+              <li><a href="service-climate.html">Climate Risk Analysis</a></li>
+              <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="services.html">View All Services</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-container">
+            <div class="footer-bottom-content">
+              <p>&copy; 2024 HYDRisk. All rights reserved.</p>
+              <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
-    <script>
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-      // Navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 100) {
-          navbar.style.background = "rgba(255, 255, 255, 0.98)";
-          navbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+    <!-- JavaScript -->
+    <script src="js/mobile-nav.js"></script>
+    <script>
+      // Back to top button functionality
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.style.display = 'block';
         } else {
-          navbar.style.background = "rgba(255, 255, 255, 0.95)";
-          navbar.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.1)";
+          backToTopButton.style.display = 'none';
         }
       });
 
-      // Fade in animation on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+      // Scroll to top on click
+      backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
         });
-      }, observerOptions);
-
-      document.querySelectorAll(".service-card, .feature").forEach(el => {
-        el.classList.add("fade-in");
-        observer.observe(el);
       });
     </script>
   </body>
 </html>
+        < s c r i p t   s r c = " j s / i m p a c t - c o u n t e r . j s " > < / s c r i p t > 
+ 
+ 

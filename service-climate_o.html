@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Risk Flood Analysis - HYDRisk</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="enhanced-footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Enhanced Service Detail Styles */
+      .service-detail-hero {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a365d 0%, #274472 100%);
+      }
+
+      .service-detail-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(39, 68, 114, 0.8) 0%,
+          rgba(26, 54, 93, 0.9) 100%
+        );
+        z-index: 0;
+      }
+
+      .service-detail-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: white;
+        max-width: 900px;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .service-detail-content h1 {
+        font-size: 3.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .service-detail-content p {
+        font-size: 1.4rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+        line-height: 1.6;
+        animation: fadeInUp 1s ease-out 0.3s both;
+      }
+
+      .back-button {
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .service-detail-section {
+        padding: 100px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .service-detail-section h2 {
+        font-size: 2.5rem;
+        color: #1a365d;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .service-detail-section h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(135deg, #1a365d 0%, #274472 100%);
+        border-radius: 2px;
+      }
+
+      .service-detail-section p {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.8;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .service-features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin: 60px 0;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+        border: 1px solid #e9ecef;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(39, 68, 114, 0.2);
+      }
+
+      .feature-icon {
+        font-size: 3.5rem;
+        color: #1a365d;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .feature-card h3 {
+        font-size: 1.6rem;
+        color: #1a365d;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .feature-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 0;
+        font-size: 1rem;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #1a365d 0%, #274472 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        margin-top: 80px;
+        border-radius: 20px;
+      }
+
+      .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: white;
+        color: #1a365d;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .service-detail-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .service-detail-content p {
+          font-size: 1.2rem;
+        }
+
+        .service-features-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .feature-card {
+          margin: 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <span>HYDRisk</span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <span>HYDRisk</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <section class="service-detail-hero">
+      <div class="service-detail-overlay"></div>
+      <a href="services.html" class="back-button">← Back to Services</a>
+      <div class="service-detail-content">
+        <h1>Climate Risk Flood Analysis</h1>
+        <p>
+          Future climate change impact assessment on flood risk and adaptation
+          strategies.
+        </p>
+      </div>
+    </section>
+
+    <section class="service-detail-section">
+      <h2>Our Climate Risk Flood Analysis Services</h2>
+      <p>
+        We provide comprehensive assessments of future climate change impacts on
+        flood risk, helping clients develop effective adaptation strategies to
+        protect infrastructure and communities.
+      </p>
+
+      <div class="service-features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌡️</div>
+          <h3>Climate Scenario Modeling</h3>
+          <p>
+            Analysis of multiple climate change scenarios to predict flood risk
+            variations using IPCC projections and downscaled climate models.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌊</div>
+          <h3>Sea-Level Rise Assessments</h3>
+          <p>
+            Evaluation of sea-level rise impacts on coastal flooding and
+            infrastructure with detailed inundation mapping and timeline
+            analysis.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3>Long-Term Risk Mapping</h3>
+          <p>
+            Mapping of flood risk changes over extended time horizons (2050,
+            2100) to inform strategic planning and investment decisions.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">♻️</div>
+          <h3>Adaptation Strategies</h3>
+          <p>
+            Development of practical strategies to mitigate climate-related
+            flood risks including nature-based solutions and engineered
+            defenses.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Extreme Weather Analysis</h3>
+          <p>
+            Assessment of changing extreme weather patterns and their impact on
+            flood frequency, intensity, and duration.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Vulnerability Assessment</h3>
+          <p>
+            Comprehensive evaluation of infrastructure and community
+            vulnerability to climate change impacts and flood risks.
+          </p>
+        </div>
+      </div>
+
+      <h2>Climate Data & Methodology</h2>
+      <p>
+        We utilize the latest climate science and modeling techniques to provide
+        accurate and reliable climate risk assessments.
+      </p>
+
+      <div class="service-features-grid">
+        <div class="feature-card">
+          <h3>IPCC Climate Models</h3>
+          <p>
+            Integration of latest IPCC climate projections (CMIP6) with regional
+            downscaling for local impact assessment.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Extreme Value Analysis</h3>
+          <p>
+            Statistical analysis of extreme precipitation and flood events under
+            changing climate conditions.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Uncertainty Quantification</h3>
+          <p>
+            Comprehensive uncertainty analysis to support robust decision-making
+            under climate uncertainty.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Multi-Model Ensemble</h3>
+          <p>
+            Utilization of multiple climate models to provide robust risk
+            estimates and confidence intervals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Ready to Address Climate Flood Risks?</h2>
+      <p>
+        Contact our experts for tailored climate risk flood analysis and
+        adaptation planning.
+      </p>
+      <a href="contact.html" class="cta-button">Get Started Today</a>
+    </section>
+
+    <!-- Enhanced Footer Section -->
+    <footer class="enhanced-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <h3>HYDRisk</h3>
+            </div>
+            <p class="footer-description">
+              Leading global consulting firm for flood risk assessment and
+              management solutions. Protecting your assets with cutting-edge
+              technology and expertise.
+            </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>About HYDRisk</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Mission & Vision</a></li>
+              <li><a href="about.html">Our Goals</a></li>
+              <li><a href="about.html">Expert Team</a></li>
+              <li><a href="about.html">IIT Alumni Network</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
+              <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
+              <li><a href="service-fra.html">Flood Risk Assessment</a></li>
+              <li><a href="service-climate.html">Climate Risk Analysis</a></li>
+              <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="services.html">View All Services</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-container">
+            <div class="footer-bottom-content">
+              <p>&copy; 2024 HYDRisk. All rights reserved.</p>
+              <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

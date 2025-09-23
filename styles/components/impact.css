@@ -1,0 +1,286 @@
+/* ===================================
+   Impact Section Component
+   HYDRisk Website - Impact Section Styles
+   =================================== */
+
+/* Impact Section */
+.impact-section {
+  background: white;
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234299e1' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+}
+
+.impact-section .section-title {
+  color: var(--primary-color);
+}
+
+.impact-section .section-title::after {
+  background: var(--gradient-accent);
+}
+
+.impact-section .section-subtitle {
+  color: #a0aec0;
+}
+
+.impact-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.impact-card {
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  transition: all var(--duration-normal) ease;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #4299e1, #38b2ac);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4299e1, #38b2ac, #48bb78, #ed8936);
+  transform: scaleX(0);
+  transition: transform var(--duration-normal) ease;
+}
+
+.impact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: #4299e1;
+}
+
+.impact-card:hover::before {
+  transform: scaleX(1);
+}
+
+.impact-icon-wrapper {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impact-icon {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--duration-normal) ease;
+  position: relative;
+  z-index: 1;
+}
+
+.impact-card:hover .impact-icon {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.impact-counter {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--font-display);
+  position: relative;
+  z-index: 1;
+}
+
+.impact-unit {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-left: var(--spacing-xs);
+  position: relative;
+  z-index: 1;
+}
+
+.impact-title {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+}
+
+.impact-description {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #2d3748;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.impact-metric {
+  position: relative;
+  z-index: 1;
+}
+
+.metric-label {
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: #a0aec0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.impact-summary {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #4299e1, #38b2ac);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4299e1, #38b2ac, #48bb78);
+}
+
+.impact-summary:hover {
+  border-color: #4299e1;
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.summary-content h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+
+.summary-content p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #2d3748;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+.summary-stats {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.summary-stat {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: rgba(66, 153, 225, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(66, 153, 225, 0.1);
+  transition: all var(--duration-normal) ease;
+}
+
+.summary-stat:hover {
+  background: rgba(66, 153, 225, 0.1);
+  border-color: rgba(66, 153, 225, 0.2);
+  transform: translateY(-2px);
+}
+
+.stat-number {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--font-display);
+}
+
+.stat-label {
+  display: block;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: #a0aec0;
+  font-weight: 500;
+  margin-top: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile-First Responsive Design for Impact Section */
+@media (max-width: 767px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .impact-card {
+    padding: var(--spacing-lg);
+  }
+
+  .impact-counter {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .impact-icon {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+/* Tablet Styles for Impact Section */
+@media (min-width: 768px) and (max-width: 991px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Styles for Impact Section */
+@media (min-width: 992px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large Desktop for Impact Section */
+@media (min-width: 1200px) {
+  .impact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
