@@ -51,7 +51,7 @@
       }
       .back-button {
         position: absolute;
-        top: 2rem;
+        top: 4rem;
         left: 2rem;
         color: white;
         text-decoration: none;
@@ -65,6 +65,14 @@
       }
       .back-button:hover {
         background: rgba(0, 0, 0, 0.7);
+      }
+      @media (max-width: 768px) {
+        .back-button {
+          position: fixed;
+          top: 7rem;
+          left: 1rem;
+          margin-bottom: 1rem;
+        }
       }
       .mobile-menu {
         position: fixed;

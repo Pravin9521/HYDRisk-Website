@@ -18,6 +18,7 @@ class MobileNavigation {
       this.bindEvents();
       this.setupScrollEffect();
       this.setupBackToTop();
+      
     }
   }
 
