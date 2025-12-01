@@ -2,8 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog - HYDRisk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="description" content="Read the latest articles and insights about flood risk management, hydraulic modeling, climate change impacts, and flood prevention strategies." />
+    <meta name="keywords" content="flood risk blog, hydraulic engineering articles, flood management news, climate change flooding" />
+    <title>Blog - Flood Risk Management Insights | HYDRisk</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/blog.html" />
+    <meta property="og:title" content="Blog - Flood Risk Management Insights | HYDRisk" />
+    <meta property="og:description" content="Latest articles and insights about flood risk management and hydraulic engineering" />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hydrisk.com/blog.html" />
+    <meta property="twitter:title" content="Blog - Flood Risk Management Insights | HYDRisk" />
+    <meta property="twitter:description" content="Latest articles about flood risk management" />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hydrisk.com/blog.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,48 +37,75 @@
     <link rel="stylesheet" href="styles/components/impact.css" />
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
-
-        <!-- Mobile Menu Toggle -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item">
+              <i class="fas fa-water"></i> Flood Risk Assessment
+            </a>
+            <a href="service-hydraulic.html" class="services-dropdown-item">
+              <i class="fas fa-project-diagram"></i> Hydraulic Modelling
+            </a>
+            <a href="service-dam-break.html" class="services-dropdown-item">
+              <i class="fas fa-dam"></i> Dam Break Analysis
+            </a>
+            <a href="service-climate.html" class="services-dropdown-item">
+              <i class="fas fa-cloud-rain"></i> Climate Risk Analysis
+            </a>
+            <a href="service-drainage.html" class="services-dropdown-item">
+              <i class="fas fa-tint"></i> Drainage Strategies
+            </a>
+            <a href="service-grading.html" class="services-dropdown-item">
+              <i class="fas fa-mountain"></i> Grading & Levelling
+            </a>
+            <a href="service-fra-solar.html" class="services-dropdown-item">
+              <i class="fas fa-solar-panel"></i> Solar PV FRA
+            </a>
+          </div>
+        </li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-
-        <!-- Navigation Menu -->
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="faq.html" class="nav-link">FAQ</a></li>
-          <li><a href="blog.html" class="nav-link active">Blog</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
       </div>
     </nav>
+
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html" class="nav-logo">
-        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
         <span>HYDRisk</span>
       </a>
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li class="services-dropdown"><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="faq.html" class="nav-link">FAQ</a></li>
-        <li><a href="blog.html" class="nav-link  active">Blog</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
+
     <!-- Blog Section -->
+    <main id="main-content">
     <section class="blog-section">
       <div class="blog-background">
         <video autoplay loop muted playsinline class="blog-back-video">
@@ -133,7 +179,7 @@
                 </ol>
                 <div style="text-align: center; margin: 20px 0">
                   <img
-                    src="flooded_solar.png"
+                    src="photos/01_FRA/pexels-dibakar-roy-2432543-20989107.jpg"
                     alt="Flood inside the Solar PV Plant"
                     style="
                       max-width: 100%;
@@ -189,7 +235,7 @@
                 </ol>
                 <div style="text-align: center; margin: 20px 0">
                   <img
-                    src="solar_infra.png"
+                    src="photos/01_FRA/pexels-sveta-k-75705601-8568719.jpg"
                     alt="Solar Plant with proper infrastructure"
                     style="
                       max-width: 100%;
@@ -374,7 +420,7 @@
           <!-- Brand Section -->
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img src="logo.jpg" alt="HYDRisk Logo" width="60" height="60" loading="lazy" />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
@@ -413,6 +459,8 @@
               <li><a href="service-fra.html">Flood Risk Assessment</a></li>
               <li><a href="service-climate.html">Climate Impact Studies</a></li>
               <li><a href="service-grading.html">Site Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
             </ul>
           </div>
 

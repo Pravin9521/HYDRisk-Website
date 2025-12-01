@@ -2,8 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="description" content="Advanced hydraulic modeling services for rivers, channels, and floodplains using state-of-the-art software and computational methods." />
+    <meta name="keywords" content="hydraulic modeling, flow modeling, sediment transport, design flood estimation, river modeling" />
     <title>Hydraulic Modelling - HYDRisk</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/service-hydraulic.html" />
+    <meta property="og:title" content="Hydraulic Modelling - HYDRisk" />
+    <meta property="og:description" content="Advanced hydraulic modeling for rivers, channels, and floodplains" />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hydrisk.com/service-hydraulic.html" />
+    <meta property="twitter:title" content="Hydraulic Modelling - HYDRisk" />
+    <meta property="twitter:description" content="Advanced hydraulic modeling services" />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hydrisk.com/service-hydraulic.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,87 +33,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles/main_fixed.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/components/footer.css" />
-    <style>
-      .service-detail-hero {
-        background: white !important;
-        color: #2c3e50;
-        position: relative;
-      }
-      .service-detail-overlay {
-        background: rgba(0, 0, 0, 0.4) !important;
-      }
-      .service-detail-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 2;
-        color: white;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 1px 1px 3px rgba(0, 0, 0, 1);
-      }
-      .service-detail-content h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        margin-bottom: 1rem;
-        font-weight: bold;
-        font-family: Arial, sans-serif;
-        letter-spacing: 0.05em;
-      }
-      .service-detail-content p {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
-        margin-bottom: 2rem;
-        opacity: 1;
-        font-weight: bold;
-        font-family: Arial, sans-serif;
-      }
-      .back-button {
-        position: absolute;
-        top: 2rem;
-        left: 2rem;
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        z-index: 3;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        padding: 0.5rem 1rem;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-        transition: background 0.3s ease;
-      }
-      .back-button:hover {
-        background: rgba(0, 0, 0, 0.7);
-      }
-      .service-detail-section {
-        padding: 3rem 0;
-        background: white;
-        color: #2c3e50;
-        text-align: center;
-      }
-      .service-features-grid {
-        overflow: visible;
-      }
-      .cta-section {
-        padding: 3rem 0;
-        background: white;
-        color: #2c3e50;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/components/breadcrumbs.css" />
+    <link rel="stylesheet" href="styles/components/service-hydraulic.css" />
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="services-dropdown">
+            <a href="services.html" class="nav-link active">Services</a>
+            <div class="services-dropdown-menu">
+              <a href="service-fra.html" class="services-dropdown-item"><i class="fas fa-water"></i> Flood Risk Assessment</a>
+              <a href="service-hydraulic.html" class="services-dropdown-item"><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a>
+              <a href="service-dam-break.html" class="services-dropdown-item"><i class="fas fa-dam"></i> Dam Break Analysis</a>
+              <a href="service-climate.html" class="services-dropdown-item"><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a>
+              <a href="service-drainage.html" class="services-dropdown-item"><i class="fas fa-tint"></i> Drainage Strategies</a>
+              <a href="service-grading.html" class="services-dropdown-item"><i class="fas fa-mountain"></i> Grading & Levelling</a>
+              <a href="service-fra-solar.html" class="services-dropdown-item"><i class="fas fa-solar-panel"></i> Solar PV FRA</a>
+            </div>
+          </li>
           <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -110,19 +79,31 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html" class="nav-logo">
-        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
         <span>HYDRisk</span>
       </a>
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link active">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item"><i class="fas fa-water"></i> Flood Risk Assessment</a>
+            <a href="service-hydraulic.html" class="services-dropdown-item"><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a>
+            <a href="service-dam-break.html" class="services-dropdown-item"><i class="fas fa-dam"></i> Dam Break Analysis</a>
+            <a href="service-climate.html" class="services-dropdown-item"><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a>
+            <a href="service-drainage.html" class="services-dropdown-item"><i class="fas fa-tint"></i> Drainage Strategies</a>
+            <a href="service-grading.html" class="services-dropdown-item"><i class="fas fa-mountain"></i> Grading & Levelling</a>
+            <a href="service-fra-solar.html" class="services-dropdown-item"><i class="fas fa-solar-panel"></i> Solar PV FRA</a>
+          </div>
+        </li>
         <li><a href="faq.html" class="nav-link">FAQ</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
 
+    <main id="main-content">
     <section class="service-detail-hero">
       <video class="service-detail-video" autoplay muted loop playsinline>
         <source src="water.mp4" type="video/mp4" />
@@ -137,6 +118,26 @@
       </div>
     </section>
 
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="breadcrumbs-container">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item">
+            <a href="index.html" class="breadcrumbs-link">
+              <i class="fas fa-home breadcrumbs-icon" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li class="breadcrumbs-item">
+            <a href="services.html" class="breadcrumbs-link">Services</a>
+          </li>
+          <li class="breadcrumbs-item">
+            <span class="breadcrumbs-current" aria-current="page">Hydraulic Modeling</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
     <section class="service-detail-section">
       <h2>Advanced Hydraulic Analysis</h2>
       <p>
@@ -144,21 +145,61 @@
         in complex systems, helping you understand and predict flood patterns.
       </p>
 
-      <div class="service-features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">🌊</span>
-          <h3>1D/2D Flow Modeling</h3>
-          <p>Comprehensive analysis of water flow in rivers and channels</p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="photos/02_Hydraulic_Modelling/HEC_RAS_2d.png" alt="Hydraulic Modeling" style="max-width: 70%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);display: block; margin: 0 auto;" />
+        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><i>2D Hydraulic Flow Modeling</i></p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
+        <!-- 1D Hydraulic Modeling Card -->
+        <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4a90e2, #357abd); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">G</div>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem; text-align: center;">1D Hydraulic Modeling</h3>
+          <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+            Cross-section based modeling for rivers, channels, and pipe networks. Ideal for long river reaches and complex hydraulic structures.
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0; border-top: 2px solid #e53e3e; padding-top: 1rem;">
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Steady and unsteady flow analysis</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Bridge and culvert modeling</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Floodplain mapping</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem;">Sediment transport</li>
+          </ul>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">📊</span>
-          <h3>Floodplain Analysis</h3>
-          <p>Detailed mapping of flood extents and water depths</p>
+
+        <!-- 2D Hydraulic Modeling Card -->
+        <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <i class="fas fa-map" style="font-size: 3rem; color: #4a90e2;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem; text-align: center;">2D Hydraulic Modeling</h3>
+          <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+            Grid-based modeling for complex flow patterns, urban flooding, and overland flow analysis.
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0; border-top: 2px solid #e53e3e; padding-top: 1rem;">
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Urban flood modeling</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Dam break analysis</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Coastal flooding</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem;">Storm water management</li>
+          </ul>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🔧</span>
-          <h3>Infrastructure Impact</h3>
-          <p>Assessment of flood effects on bridges, culverts, and structures</p>
+
+        <!-- Coupled 1D/2D Modeling Card -->
+        <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <i class="fas fa-bolt" style="font-size: 3rem; color: #fbbf24;"></i>
+        </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem; text-align: center;">Coupled 1D/2D Modeling</h3>
+          <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+            Integrated modeling combining 1D channel flow with 2D overland flow for comprehensive flood analysis.
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0; border-top: 2px solid #e53e3e; padding-top: 1rem;">
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">River-floodplain interaction</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Urban drainage systems</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem; margin-bottom: 0.5rem;">Levee breach analysis</li>
+            <li style="padding: 0.5rem 0; color: #2c3e50; font-weight: 500; border-left: 3px solid #e53e3e; padding-left: 1rem;">Real-time forecasting</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -168,33 +209,94 @@
       <p>Contact our experts for comprehensive hydraulic modeling services</p>
       <a href="contact.html" class="cta-button">Get Started Today</a>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="enhanced-footer">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img src="logo.jpg" alt="HYDRisk Logo" width="60" height="60" loading="lazy" />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
               Leading global consulting firm for flood risk assessment and
-              management solutions.
+              management solutions. Protecting your assets with cutting-edge
+              technology and expertise.
             </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+            </div>
           </div>
+
+          <div class="footer-section">
+            <h4>About HYDRisk</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Mission & Vision</a></li>
+              <li><a href="about.html">Our Goals</a></li>
+              <li><a href="about.html">Expert Team</a></li>
+              <li><a href="about.html">IIT Alumni Network</a></li>
+            </ul>
+          </div>
+
           <div class="footer-section">
             <h4>Quick Links</h4>
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
+              <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
+              <li><a href="service-fra.html">Flood Risk Assessment</a></li>
+              <li><a href="service-climate.html">Climate Risk Analysis</a></li>
+              <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
+              <li><a href="services.html">View All Services</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>&copy; 2024 HYDRisk. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="js/api-handler.js"></script>
     <script src="js/mobile-nav.js"></script>
   </body>
 </html>

@@ -2,8 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="description" content="Comprehensive flood risk management services including dam break analysis, hydraulic modeling, flood risk assessment, climate risk analysis, and grading & drainage solutions." />
+    <meta name="keywords" content="flood risk services, dam break analysis, hydraulic modeling, flood assessment, climate risk, drainage solutions" />
     <title>Services - Advanced Flood Risk Solutions | HYDRisk</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/services.html" />
+    <meta property="og:title" content="Services - Advanced Flood Risk Solutions | HYDRisk" />
+    <meta property="og:description" content="Comprehensive flood risk management services for infrastructure, urban planning, and emergency response" />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hydrisk.com/services.html" />
+    <meta property="twitter:title" content="Services - Advanced Flood Risk Solutions | HYDRisk" />
+    <meta property="twitter:description" content="Comprehensive flood risk management services" />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hydrisk.com/services.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,11 +40,14 @@
     <link rel="stylesheet" href="styles/components/impact.css" />
   </head>
   <body style="background: white;">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
 
@@ -33,7 +55,32 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="services-dropdown">
+            <a href="services.html" class="nav-link active">Services</a>
+            <div class="services-dropdown-menu">
+              <a href="service-fra.html" class="services-dropdown-item">
+                <i class="fas fa-water"></i> Flood Risk Assessment
+              </a>
+              <a href="service-hydraulic.html" class="services-dropdown-item">
+                <i class="fas fa-project-diagram"></i> Hydraulic Modelling
+              </a>
+              <a href="service-dam-break.html" class="services-dropdown-item">
+                <i class="fas fa-dam"></i> Dam Break Analysis
+              </a>
+              <a href="service-climate.html" class="services-dropdown-item">
+                <i class="fas fa-cloud-rain"></i> Climate Risk Analysis
+              </a>
+              <a href="service-drainage.html" class="services-dropdown-item">
+                <i class="fas fa-tint"></i> Drainage Strategies
+              </a>
+              <a href="service-grading.html" class="services-dropdown-item">
+                <i class="fas fa-mountain"></i> Grading & Levelling
+              </a>
+              <a href="service-fra-solar.html" class="services-dropdown-item">
+                <i class="fas fa-solar-panel"></i> Solar PV FRA
+              </a>
+            </div>
+          </li>
           <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -51,13 +98,38 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html" class="nav-logo">
-        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
         <span>HYDRisk</span>
       </a>
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link active">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item">
+              <i class="fas fa-water"></i> Flood Risk Assessment
+            </a>
+            <a href="service-hydraulic.html" class="services-dropdown-item">
+              <i class="fas fa-project-diagram"></i> Hydraulic Modelling
+            </a>
+            <a href="service-dam-break.html" class="services-dropdown-item">
+              <i class="fas fa-dam"></i> Dam Break Analysis
+            </a>
+            <a href="service-climate.html" class="services-dropdown-item">
+              <i class="fas fa-cloud-rain"></i> Climate Risk Analysis
+            </a>
+            <a href="service-drainage.html" class="services-dropdown-item">
+              <i class="fas fa-tint"></i> Drainage Strategies
+            </a>
+            <a href="service-grading.html" class="services-dropdown-item">
+              <i class="fas fa-mountain"></i> Grading & Levelling
+            </a>
+            <a href="service-fra-solar.html" class="services-dropdown-item">
+              <i class="fas fa-solar-panel"></i> Solar PV FRA
+            </a>
+          </div>
+        </li>
         <li><a href="faq.html" class="nav-link">FAQ</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -65,13 +137,13 @@
     </div>
 
     <!-- Services Section -->
+    <main id="main-content">
     <section id="services" class="section" style="background: white; padding-top: 2rem;">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title section-title-long">Our Comprehensive Services</h2>
           <p class="section-subtitle">
-            Cutting-edge solutions for flood risk management and water resource
-            engineering
+            HYDRisk specializes in comprehensive flood risk assessment and hydraulic solutions for solar PV plants, industrial, commercial, and residential developments worldwide. Our services ensure your projects are resilient, compliant, and sustainable in the face of increasing flood risks.
           </p>
         </div>
 
@@ -80,23 +152,16 @@
             <a href="service-fra.html" class="service-link-wrapper">
               <div class="service-image-wrapper">
                 <img
-                  src="flooded_solar.png"
+                  src="photos/01_FRA/3_HEC_RAS_Floood_Image.png"
                   alt="Flood Risk Assessment"
                   class="service-image"
                 />
               </div>
               <div class="service-content">
-                <h3 class="service-title">Flood Risk Assessments (FRA)</h3>
+                <h3 class="service-title">Flood Risk Assessments</h3>
                 <p class="service-description">
-                  Comprehensive flood risk studies for new developments and
-                  existing infrastructure.
+                  Global expertise in evaluating flood risks for solar PV plants, industries, commercial, and residential sites.
                 </p>
-                <ul class="service-features">
-                  <li>Site-specific flood zone analysis</li>
-                  <li>Rainfall-runoff modeling</li>
-                  <li>Historical flood data integration</li>
-                  <li>Risk mapping & mitigation strategies</li>
-                </ul>
               </div>
             </a>
           </div>
@@ -105,7 +170,7 @@
             <a href="service-hydraulic.html" class="service-link-wrapper">
               <div class="service-image-wrapper">
                 <img
-                  src="solar_infra.png"
+                  src="photos/02_Hydraulic Modelling/4_HEC_RAS_Flood_About_US.png"
                   alt="Hydraulic Modelling"
                   class="service-image"
                 />
@@ -113,15 +178,8 @@
               <div class="service-content">
                 <h3 class="service-title">Hydraulic Modelling</h3>
                 <p class="service-description">
-                  Advanced simulation of water behavior in rivers, drainage
-                  systems, and floodplains.
+                  Using advanced computer simulations, we accurately predict how water will flow during a flood, helping you plan effectively.
                 </p>
-                <ul class="service-features">
-                  <li>1D/2D hydraulic modeling</li>
-                  <li>Flow path simulations</li>
-                  <li>Catchment area studies</li>
-                  <li>Infrastructure impact analysis</li>
-                </ul>
               </div>
             </a>
           </div>
@@ -130,23 +188,16 @@
             <a href="service-dam-break.html" class="service-link-wrapper">
               <div class="service-image-wrapper">
                 <img
-                  src="dam_video.mp4"
-                  alt="Dam Break Analysis"
+                  src="photos/03_Dam_Break_Analysis/HEC_RAS_2d.png"
+                  alt="Dam Break & River Flood Modelling"
                   class="service-image"
                 />
               </div>
               <div class="service-content">
                 <h3 class="service-title">Dam Break & River Flood Modelling</h3>
                 <p class="service-description">
-                  Critical analysis of dam breach scenarios and river flooding
-                  impacts.
+                  Predict and prepare for the worst-case scenarios with accurate dam breach and river flood simulations.
                 </p>
-                <ul class="service-features">
-                  <li>Dam breach scenario modeling</li>
-                  <li>Inundation mapping</li>
-                  <li>Evacuation planning</li>
-                  <li>Real-time propagation analysis</li>
-                </ul>
               </div>
             </a>
           </div>
@@ -155,23 +206,37 @@
             <a href="service-climate.html" class="service-link-wrapper">
               <div class="service-image-wrapper">
                 <img
-                  src="image.jpg"
-                  alt="Climate Risk Analysis"
+                  src="photos/04_Climate_Change/pexels-hiteshchoudhary-1739855.jpg"
+                  alt="Climate Risk Flood Analysis"
                   class="service-image"
+                  width="400"
+                  height="300"
+                  loading="lazy"
                 />
               </div>
               <div class="service-content">
                 <h3 class="service-title">Climate Risk Flood Analysis</h3>
                 <p class="service-description">
-                  Future climate change impact assessment on flood risk and
-                  adaptation strategies.
+                  We assess how future climate change scenarios will impact your flood risk, helping you build resilience for the long term.
                 </p>
-                <ul class="service-features">
-                  <li>Climate scenario modeling</li>
-                  <li>Sea-level rise assessments</li>
-                  <li>Long-term risk mapping</li>
-                  <li>Adaptation strategies</li>
-                </ul>
+              </div>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <a href="service-drainage.html" class="service-link-wrapper">
+              <div class="service-image-wrapper">
+                <img
+                  src="photos/01_FRA/pexels-sveta-k-75705601-8568719.jpg"
+                  alt="Drainage Strategies"
+                  class="service-image"
+                />
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Drainage Strategies</h3>
+                <p class="service-description">
+                  We provide tailored mitigation solutions and safe water passage systems for solar PV plants, industrial, commercial, and residential developments.
+                </p>
               </div>
             </a>
           </div>
@@ -180,7 +245,7 @@
             <a href="service-grading.html" class="service-link-wrapper">
               <div class="service-image-wrapper">
                 <img
-                  src="solar_infra.png"
+                  src="photos/05_Land_Leveling/pexels-aditya-gupta-172079502-11015325.jpg"
                   alt="Levelling and Grading"
                   class="service-image"
                 />
@@ -188,17 +253,157 @@
               <div class="service-content">
                 <h3 class="service-title">Levelling and Grading</h3>
                 <p class="service-description">
-                  Land shaping for optimal water flow and stable foundations.
+                  We shape the land to ensure proper water flow and a stable foundation for your development, reducing future flood vulnerabilities.
                 </p>
-                <ul class="service-features">
-                  <li>Grading & earthwork calculations</li>
-                  <li>Drainage optimization</li>
-                  <li>Cut/fill optimization</li>
-                  <li>Digital Terrain Modelling</li>
-                </ul>
               </div>
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="section" style="background: #f8f9fa; padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <div class="about-content" style="max-width: 900px; margin: 0 auto;">
+          <p>
+            At HYDRisk, we are dedicated to providing cutting-edge solutions for understanding, mitigating, and managing flood risks globally. We specialize in transforming complex hydrological data into actionable insights, enabling our clients to build resilience against the growing threat of flooding.
+          </p>
+          <p>
+            Our core activities revolve around:
+          </p>
+          <ul>
+            <li><strong>Precise Risk Identification:</strong> Utilizing advanced methodologies to pinpoint where and how your assets are vulnerable to flooding, from river overflows to heavy rainfall and potential dam failures.</li>
+            <li><strong>Advanced Simulation & Prediction:</strong> Employing sophisticated hydraulic models to accurately predict water behavior, flood depths, and flow paths under various scenarios, including the impacts of future climate change.</li>
+            <li><strong>Strategic Solution Design:</strong> Developing practical, sustainable, and cost-effective strategies for flood mitigation, including optimized drainage systems, site grading, and structural protection measures.</li>
+            <li><strong>Empowering Informed Decisions:</strong> Providing clear, comprehensive reports and expert guidance that empower property owners, developers, and industries to make confident decisions about their investments and operations in flood-prone areas.</li>
+          </ul>
+          <p>
+            In essence, we help you understand the risk today, prepare for the challenges of tomorrow, and build with confidence in the face of flooding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Expertise Section -->
+    <section class="section" style="background: white; padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section-title">Our Expertise</h2>
+        <div class="about-content" style="max-width: 900px; margin: 0 auto;">
+          <p>
+            The strength of HYDRisk lies in the profound knowledge and experience of our team. Our core consultants and lead engineers are distinguished graduates of the Indian Institutes of Technology (IITs), globally recognized for their rigorous academic programs and groundbreaking research in engineering and applied sciences.
+          </p>
+          <p>
+            This elite academic background instills in us:
+          </p>
+          <ul>
+            <li><strong>Deep Analytical Acumen:</strong> A superior ability to dissect complex hydrological challenges and develop robust, data-driven solutions.</li>
+            <li><strong>Comprehensive Theoretical Mastery:</strong> A thorough understanding of fluid mechanics, hydrology, climate science, and advanced computational techniques.</li>
+            <li><strong>Innovation at the Core:</strong> A commitment to integrating the latest research and technological advancements into our practical applications.</li>
+            <li><strong>Global Applicability:</strong> A broad perspective on diverse environmental conditions and regulatory frameworks, enabling us to tackle projects across any geography.</li>
+          </ul>
+          <p>
+            Beyond our academic foundations, our team possesses extensive practical experience in a wide array of flood risk assessment, hydraulic modelling, and water management projects worldwide. This unique combination of academic excellence from the IITs and hands-on, real-world experience ensures that HYDRisk delivers solutions that are not only scientifically sound but also pragmatic, efficient, and tailored to your specific needs. We are your trusted partners in navigating the complexities of flood risk.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Projects Can We Help With Section -->
+    <section class="section" style="background: #f8f9fa; padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section-title">What Projects Can We Help With?</h2>
+        <div class="about-content" style="max-width: 900px; margin: 0 auto;">
+          <p>
+            HYDRisk is equipped to provide comprehensive flood risk solutions for a diverse range of projects and sectors globally, including:
+          </p>
+          <ul>
+            <li><strong>Solar PV Plants (Global):</strong> From initial site selection to operational resilience, we assess flood risks for large-scale solar farms, protecting vital infrastructure like panels, inverters, and foundations from submergence and erosion.</li>
+            <li><strong>Industrial Facilities:</strong> Safeguarding factories, manufacturing plants, warehouses, and other industrial complexes from operational disruptions and damage to critical machinery and inventory due to flooding.</li>
+            <li><strong>Commercial Developments:</strong> Ensuring the safety and business continuity of office complexes, retail centers, business parks, and mixed-use developments by mitigating flood impacts on buildings, access, and utilities.</li>
+            <li><strong>Residential Developments:</strong> Providing peace of mind for homeowners, developers, and communities by assessing and mitigating flood risks for single residences, housing estates, and urban planning projects.</li>
+            <li><strong>Infrastructure Projects:</strong> Supporting the design and resilience of critical infrastructure such as roads, bridges, culverts, pipelines, and utility networks against fluvial and surface water flooding.</li>
+            <li><strong>Urban Regeneration Projects:</strong> Integrating flood resilience into urban planning and redevelopment initiatives to create sustainable and safe environments.</li>
+            <li><strong>Environmental Impact Assessments:</strong> Providing specialist flood risk input for larger environmental impact studies for various development types.</li>
+          </ul>
+          <p>
+            No matter the scale or location of your project, if water is a concern, HYDRisk has the expertise to guide you towards a flood-resilient future.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Undertake FRA Section -->
+    <section class="section" style="background: white; padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section-title">Why Undertake a Flood Risk Assessment at Your Solar PV / Property / Industry?</h2>
+        <div class="about-content" style="max-width: 900px; margin: 0 auto;">
+          <p>
+            Undertaking a comprehensive flood risk assessment (FRA) is not just a regulatory formality; it's a critical investment in the longevity, safety, and financial viability of your assets. Here's why it's indispensable:
+          </p>
+          <ul>
+            <li><strong>Protect Your Investment:</strong> Flooding can cause catastrophic damage to infrastructure, machinery, and inventory, leading to significant financial losses, repairs, and prolonged operational downtime. An FRA identifies these vulnerabilities, allowing you to implement protective measures.</li>
+            <li><strong>Ensure Safety and Business Continuity:</strong> For industries and commercial properties, flooding can halt operations, endanger staff, and disrupt supply chains. For residential properties, it poses a direct threat to lives and homes. An FRA informs strategies to ensure safety and minimize disruption.</li>
+            <li><strong>Secure Planning & Regulatory Approvals:</strong> In many regions globally, an FRA is a mandatory requirement for obtaining planning permission for new developments or significant modifications, particularly in flood-prone areas. It demonstrates due diligence and responsible development.</li>
+            <li><strong>Inform Resilient Design:</strong> The findings of an FRA guide the design of your project, enabling the incorporation of flood-resilient features such as elevated structures, robust drainage systems, flood barriers, or appropriate site grading, reducing future damage.</li>
+            <li><strong>Understand and Manage Climate Risk:</strong> With changing climate patterns, historical flood data alone is insufficient. An FRA, particularly one that includes climate risk analysis, helps you understand how future scenarios might impact your asset, allowing for proactive adaptation.</li>
+            <li><strong>Insurance and Financial Benefits:</strong> A robust FRA can help you secure appropriate flood insurance coverage and may even lead to more favourable premiums by demonstrating proactive risk management. It also provides crucial information for financial disclosures and investor confidence.</li>
+            <li><strong>Enhance Property Value & Reputation:</strong> A flood-resilient property is a more valuable and attractive asset. Demonstrating a proactive approach to flood risk management enhances your reputation and safeguards your long-term interests.</li>
+          </ul>
+          <p>
+            In essence, an FRA provides the critical knowledge needed to anticipate, mitigate, and respond to flood threats, ensuring your solar PV plant, property, or industry is built to withstand the challenges of water.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Work With Section -->
+    <section class="section" style="background: #f8f9fa; padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section-title">Who We Work With</h2>
+        <div class="about-content" style="max-width: 900px; margin: 0 auto;">
+          <p>
+            At HYDRisk, we build strong, collaborative relationships with a diverse range of clients and partners across the globe. Our expertise serves:
+          </p>
+          <ul>
+            <li><strong>Solar PV Developers & Operators:</strong> Assisting with site selection, design, and operational resilience for large-scale solar energy projects.</li>
+            <li><strong>Industrial Corporations:</strong> Partnering with manufacturing, logistics, and processing industries to protect their facilities and ensure business continuity.</li>
+            <li><strong>Commercial Developers & Property Owners:</strong> Collaborating on office parks, retail centers, hotels, and other commercial properties to mitigate flood risks and enhance value.</li>
+            <li><strong>Residential Developers & Homeowners:</strong> Providing peace of mind and essential planning insights for housing projects and individual properties.</li>
+            <li><strong>Architects & Engineers:</strong> Working alongside design teams to integrate flood resilience directly into project plans.</li>
+            <li><strong>Urban Planners & Local Authorities:</strong> Supporting strategic planning for resilient urban development and infrastructure.</li>
+            <li><strong>Environmental Consultants:</strong> Providing specialist hydrological and hydraulic input for broader environmental assessments.</li>
+            <li><strong>Insurance Companies & Financial Institutions:</strong> Offering expert insights for risk underwriting and climate-related financial disclosures.</li>
+            <li><strong>Government Agencies & Public Bodies:</strong> Assisting with flood management strategies, policy development, and critical infrastructure protection.</li>
+          </ul>
+          <p>
+            Our client-centric approach ensures that we understand your unique challenges and objectives, delivering tailored solutions that meet your specific needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background: white; padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="about-content" style="max-width: 900px; margin: 0 auto;">
+          <p>
+            Choosing the right partner for flood risk management is crucial. Here's why HYDRisk stands out as your ideal choice:
+          </p>
+          <ol>
+            <li><strong>IIT-Backed Expertise:</strong> Our core team comprises distinguished graduates from the Indian Institutes of Technology (IITs), bringing unparalleled analytical rigor, academic excellence, and an innovative approach to every project. This ensures scientifically sound and meticulously crafted solutions.</li>
+            <li><strong>Global Reach, Tailored Solutions:</strong> We operate globally, understanding that every region has unique hydrological conditions and regulatory frameworks. Our solutions are not generic; they are meticulously tailored to your specific site, local context, and project requirements, anywhere in the world.</li>
+            <li><strong>Comprehensive Service Offering:</strong> From initial Flood Risk Assessments and advanced Hydraulic Modelling to future-focused Climate Risk Flood Analysis, practical Drainage Strategies, and precise Levelling & Grading, we offer a full suite of services to address all your flood resilience needs under one roof.</li>
+            <li><strong>Advanced Technology & Methodologies:</strong> We leverage the latest industry-standard software and cutting-edge modelling techniques, ensuring our predictions are accurate, our designs are optimized, and our insights are reliable.</li>
+            <li><strong>Proactive & Future-Focused:</strong> We don't just assess current risks; our Climate Risk Flood Analysis helps you anticipate future challenges posed by a changing climate, enabling you to build truly resilient and future-proof assets.</li>
+            <li><strong>Client-Centric Partnership:</strong> We believe in close collaboration. Our team works closely with you to understand your objectives, communicate complex findings clearly, and provide actionable recommendations, ensuring your peace of mind and success.</li>
+            <li><strong>Commitment to Sustainability:</strong> Our solutions are designed not only for protection but also for environmental stewardship, incorporating sustainable practices that benefit both your project and the wider ecosystem.</li>
+          </ol>
+          <p>
+            Choose HYDRisk for unparalleled expertise, innovative solutions, and a dedicated partnership in building a flood-resilient future for your valuable assets.
+          </p>
         </div>
       </div>
     </section>
@@ -230,6 +435,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -237,7 +443,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img src="logo.jpg" alt="HYDRisk Logo" width="60" height="60" loading="lazy" />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
@@ -296,20 +502,20 @@
               <li><a href="service-fra.html">Flood Risk Assessment</a></li>
               <li><a href="service-climate.html">Climate Risk Analysis</a></li>
               <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
               <li><a href="services.html">View All Services</a></li>
             </ul>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <div class="footer-container">
             <div class="footer-bottom-content">
               <p>&copy; 2024 HYDRisk. All rights reserved.</p>
               <div class="footer-bottom-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Cookie Policy</a>
-              </div>
             </div>
           </div>
         </div>

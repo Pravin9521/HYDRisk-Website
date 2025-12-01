@@ -1,0 +1,237 @@
+/* Drainage Strategies Service Page Styles */
+
+.service-detail-hero {
+  background-image: url('photos/06_Drainage_Strategies/Drainage Strategies.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.service-detail-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.service-detail-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.service-detail-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-detail-content p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-cta-button {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.hero-cta-button:hover {
+  background: #2980b9;
+}
+
+.back-button {
+  position: absolute;
+  top: 4rem;
+  left: 2rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  z-index: 3;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.service-detail-section {
+  padding: 4rem 0;
+  background: white;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.service-detail-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.service-detail-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-detail-section img {
+  max-width: 80%;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-detail-section i {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.service-image-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.service-image-container img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+.service-image-container p {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.service-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  overflow: visible;
+}
+
+.feature-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.feature-card p {
+  color: #7f8c8d;
+  line-height: 1.5;
+}
+
+.cta-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .service-detail-content {
+    padding: 0 1rem;
+  }
+
+  .service-detail-content h1 {
+    font-size: 2rem;
+  }
+
+  .service-detail-content p {
+    font-size: 1.2rem;
+  }
+
+  .service-features-grid {
+    grid-template-columns: 1fr;
+  }
+}

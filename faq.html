@@ -2,8 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ - HYDRisk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="description" content="Frequently asked questions about flood risk assessment, hydraulic modeling, dam break analysis, and flood management services." />
+    <meta name="keywords" content="flood risk FAQ, hydraulic modeling questions, dam break analysis FAQ, flood management FAQ" />
+    <title>FAQ - Frequently Asked Questions | HYDRisk</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/faq.html" />
+    <meta property="og:title" content="FAQ - Frequently Asked Questions | HYDRisk" />
+    <meta property="og:description" content="Common questions about flood risk assessment and management services" />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hydrisk.com/faq.html" />
+    <meta property="twitter:title" content="FAQ - Frequently Asked Questions | HYDRisk" />
+    <meta property="twitter:description" content="Common questions about flood risk services" />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hydrisk.com/faq.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,17 +41,45 @@
     <link rel="stylesheet" href="styles/components/impact.css" />
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li class="services-dropdown">
+            <a href="services.html" class="nav-link">Services</a>
+            <div class="services-dropdown-menu">
+              <a href="service-fra.html" class="services-dropdown-item">
+                <i class="fas fa-water"></i> Flood Risk Assessment
+              </a>
+              <a href="service-hydraulic.html" class="services-dropdown-item">
+                <i class="fas fa-project-diagram"></i> Hydraulic Modelling
+              </a>
+              <a href="service-dam-break.html" class="services-dropdown-item">
+                <i class="fas fa-dam"></i> Dam Break Analysis
+              </a>
+              <a href="service-climate.html" class="services-dropdown-item">
+                <i class="fas fa-cloud-rain"></i> Climate Risk Analysis
+              </a>
+              <a href="service-drainage.html" class="services-dropdown-item">
+                <i class="fas fa-tint"></i> Drainage Strategies
+              </a>
+              <a href="service-grading.html" class="services-dropdown-item">
+                <i class="fas fa-mountain"></i> Grading & Levelling
+              </a>
+              <a href="service-fra-solar.html" class="services-dropdown-item">
+                <i class="fas fa-solar-panel"></i> Solar PV FRA
+              </a>
+            </div>
+          </li>
           <li><a href="faq.html" class="nav-link active">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -48,13 +95,38 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html" class="nav-logo">
-        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
         <span>HYDRisk</span>
       </a>
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item">
+              <i class="fas fa-water"></i> Flood Risk Assessment
+            </a>
+            <a href="service-hydraulic.html" class="services-dropdown-item">
+              <i class="fas fa-project-diagram"></i> Hydraulic Modelling
+            </a>
+            <a href="service-dam-break.html" class="services-dropdown-item">
+              <i class="fas fa-dam"></i> Dam Break Analysis
+            </a>
+            <a href="service-climate.html" class="services-dropdown-item">
+              <i class="fas fa-cloud-rain"></i> Climate Risk Analysis
+            </a>
+            <a href="service-drainage.html" class="services-dropdown-item">
+              <i class="fas fa-tint"></i> Drainage Strategies
+            </a>
+            <a href="service-grading.html" class="services-dropdown-item">
+              <i class="fas fa-mountain"></i> Grading & Levelling
+            </a>
+            <a href="service-fra-solar.html" class="services-dropdown-item">
+              <i class="fas fa-solar-panel"></i> Solar PV FRA
+            </a>
+          </div>
+        </li>
         <li><a href="faq.html" class="nav-link active">FAQ</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -62,7 +134,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <main id="main-content" class="main-content">
       <section class="faq-section">
         <div class="faq-container">
           <h2>Frequently Asked Questions</h2>
@@ -431,7 +503,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img src="logo.jpg" alt="HYDRisk Logo" width="60" height="60" loading="lazy" />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
@@ -490,20 +562,20 @@
               <li><a href="service-fra.html">Flood Risk Assessment</a></li>
               <li><a href="service-climate.html">Climate Risk Analysis</a></li>
               <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
               <li><a href="services.html">View All Services</a></li>
             </ul>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <div class="footer-container">
             <div class="footer-bottom-content">
               <p>&copy; 2024 HYDRisk. All rights reserved.</p>
               <div class="footer-bottom-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Cookie Policy</a>
-              </div>
             </div>
           </div>
         </div>

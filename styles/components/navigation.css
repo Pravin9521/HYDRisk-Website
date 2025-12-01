@@ -118,20 +118,151 @@
   width: 100%;
 }
 
+/* Services Dropdown */
+.services-dropdown {
+  position: relative;
+}
+
+.services-dropdown .nav-link {
+  position: relative;
+}
+
+.services-dropdown .nav-link::after {
+  content: "▼";
+  font-size: 0.8em;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.services-dropdown:hover .nav-link::after {
+  transform: rotate(180deg);
+}
+
+.services-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(26, 54, 93, 0.98);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 280px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-dropdown:hover .services-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.services-dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.services-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(5px);
+}
+
+.services-dropdown-item i {
+  margin-right: 0.75rem;
+  width: 16px;
+  text-align: center;
+}
+
+/* Mobile Services Submenu */
+.mobile-services-submenu {
+  display: none;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  margin-top: 0.5rem;
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+.mobile-menu .mobile-services-submenu {
+  display: flex;
+}
+
+.mobile-menu .services-dropdown-item {
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+.mobile-menu .services-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu .services-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: translateX(5px);
+}
+
+.mobile-menu .services-dropdown-item i {
+  margin-right: 0.75rem;
+  width: 16px;
+  text-align: center;
+}
+
 /* Mobile Menu Button */
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem;
   background: none;
   border: none;
   z-index: 1001;
   gap: 4px;
   position: absolute;
-  right: 2rem;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+  transition: var(--transition-normal);
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+  align-items: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+}
+
+.mobile-menu-toggle:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 .mobile-menu-toggle span {
@@ -176,26 +307,38 @@
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  right: -100%;
   width: 100%;
   height: 100vh;
-  background: rgba(26, 54, 93, 0.98);
+  background: rgba(44, 62, 80, 0.98);
   backdrop-filter: blur(10px);
-  z-index: 999;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  transform: translateX(-100%);
-  transition: var(--transition-normal);
-  padding: var(--spacing-xl);
-  padding-top: 80px;
+  justify-content: flex-start;
+  transition: right 0.3s ease;
+  padding: 2rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 0.3s ease;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideInRight {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
 }
 
 /* Support for both 'open' and 'active' classes for compatibility */
 .mobile-menu.open,
 .mobile-menu.active {
-  transform: translateX(0);
+  right: 0;
 }
 
 .mobile-menu .nav-logo {
@@ -313,24 +456,4 @@ body {
     gap: 2.5rem;
   }
 }
-/* Mobile menu scroll for small screens */
-.mobile-menu {
-  position: fixed;       
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;         
-  overflow-y: auto;      
-  -webkit-overflow-scrolling: touch; 
-  background-color: #1a365d; 
-  z-index: 1002;         
-  padding: 100px 20px 20px 20px; 
-  box-sizing: border-box;
-  transform: translateX(-100%); 
-  transition: transform 0.3s ease;
-}
 
-/* Show mobile menu when active */
-.mobile-menu.active {
-  transform: translateX(0);
-}

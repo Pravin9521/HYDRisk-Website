@@ -1,67 +1,92 @@
-// Impact Counter Animation
+// Impact Counter Animation with Error Handling
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to animate counters
-    function animateCounters() {
-        const counters = document.querySelectorAll('.impact-counter');
+    try {
+        // Function to animate counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.impact-counter');
+            
+            if (!counters || counters.length === 0) {
+                return; // No counters found, exit gracefully
+            }
 
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // 60fps
-            let current = 0;
+            counters.forEach(counter => {
+                try {
+                    const targetAttr = counter.getAttribute('data-target');
+                    if (!targetAttr) {
+                        console.warn('Impact counter missing data-target attribute');
+                        return;
+                    }
+                    
+                    const target = parseInt(targetAttr, 10);
+                    if (isNaN(target) || target < 0) {
+                        console.warn('Invalid target value for impact counter:', targetAttr);
+                        return;
+                    }
+                    
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps
+                    let current = 0;
+                    let animationFrameId = null;
 
-            const updateCounter = () => {
-                current += increment;
+                    const updateCounter = () => {
+                        current += increment;
 
-                if (current < target) {
-                    counter.textContent = Math.floor(current).toLocaleString();
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target.toLocaleString();
+                        if (current < target) {
+                            counter.textContent = Math.floor(current).toLocaleString();
+                            animationFrameId = requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString();
+                            if (animationFrameId) {
+                                cancelAnimationFrame(animationFrameId);
+                            }
+                        }
+                    };
+
+                    // Start animation when element is visible
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && !counter.hasAttribute('data-animated')) {
+                                counter.setAttribute('data-animated', 'true');
+                                updateCounter();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    observer.observe(counter);
+                } catch (error) {
+                    console.error('Error animating counter:', error);
                 }
-            };
+            });
+        }
 
-            // Start animation when element is visible
-            const observer = new IntersectionObserver((entries) => {
+        // Initialize counter animation
+        animateCounters();
+
+        // Re-animate counters if user scrolls back to top and returns
+        const impactSection = document.querySelector('.impact-section');
+        if (impactSection) {
+            const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        updateCounter();
-                        observer.unobserve(entry.target);
+                        // Reset animation state when section comes into view
+                        const counters = document.querySelectorAll('.impact-counter');
+                        counters.forEach(counter => {
+                            if (counter.hasAttribute('data-animated')) {
+                                counter.removeAttribute('data-animated');
+                            }
+                        });
+                        animateCounters();
                     }
                 });
-            }, { threshold: 0.5 });
+            }, {
+                threshold: 0.3,
+                rootMargin: '50px'
+            });
 
-            observer.observe(counter);
-        });
-    }
-
-    // Initialize counter animation
-    animateCounters();
-
-    // Re-animate counters if user scrolls back to top and returns
-    let hasAnimated = false;
-
-    const impactSection = document.querySelector('.impact-section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimated) {
-                animateCounters();
-                hasAnimated = true;
-            } else if (!entry.isIntersecting) {
-                // Reset counters when section is out of view
-                const counters = document.querySelectorAll('.impact-counter');
-                counters.forEach(counter => {
-                    counter.textContent = '0';
-                });
-                hasAnimated = false;
-            }
-        });
-    }, {
-        threshold: 0.3,
-        rootMargin: '50px'
-    });
-
-    if (impactSection) {
-        observer.observe(impactSection);
+            sectionObserver.observe(impactSection);
+        }
+    } catch (error) {
+        console.error('Error initializing impact counter:', error);
     }
 });

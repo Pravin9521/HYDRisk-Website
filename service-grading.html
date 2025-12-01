@@ -2,94 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="description" content="Professional land grading and drainage solutions for optimal water flow, stable foundations, and flood prevention." />
+    <meta name="keywords" content="land grading, drainage solutions, site grading, earthwork, flood prevention, water management" />
     <title>Levelling and Grading - HYDRisk</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/service-grading.html" />
+    <meta property="og:title" content="Levelling and Grading - HYDRisk" />
+    <meta property="og:description" content="Professional land grading and drainage solutions for optimal water flow" />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hydrisk.com/service-grading.html" />
+    <meta property="twitter:title" content="Levelling and Grading - HYDRisk" />
+    <meta property="twitter:description" content="Professional land grading and drainage solutions" />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hydrisk.com/service-grading.html" />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/main_fixed.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/components/breadcrumbs.css" />
+    <link rel="stylesheet" href="styles/components/service-grading.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <style>
-      html, body {
-        background: white !important;
-        color: black !important;
-      }
-      .service-detail-hero {
-        background: white !important;
-      }
-      .service-detail-overlay {
-        background: white !important;
-      }
-      .service-detail-section {
-        background: white !important;
-      }
-      .cta-section {
-        background: white !important;
-      }
-      .service-detail-content h1 {
-        color: black !important;
-      }
-      .service-detail-content p {
-        color: black !important;
-      }
-      .service-detail-section h2 {
-        color: black !important;
-      }
-      .service-detail-section p {
-        color: black !important;
-      }
-      .cta-section h2 {
-        color: black !important;
-      }
-      .cta-section p {
-        color: black !important;
-      }
-      .header {
-        background: var(--gradient-primary) !important;
-      }
-      .enhanced-footer {
-        background: var(--gradient-primary) !important;
-      }
-      .mobile-menu {
-        z-index: 1001 !important;
-        background: #1a365d !important;
-        backdrop-filter: none !important;
-      }
-      .mobile-menu-toggle {
-        z-index: 1001 !important;
-      .service-detail-content {
-        text-align: center;
-      }
-      .service-detail-section {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-      .cta-section {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-    </style>
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="services-dropdown">
+            <a href="services.html" class="nav-link active">Services</a>
+            <div class="services-dropdown-menu">
+              <a href="service-fra.html" class="services-dropdown-item"><i class="fas fa-water"></i> Flood Risk Assessment</a>
+              <a href="service-hydraulic.html" class="services-dropdown-item"><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a>
+              <a href="service-dam-break.html" class="services-dropdown-item"><i class="fas fa-dam"></i> Dam Break Analysis</a>
+              <a href="service-climate.html" class="services-dropdown-item"><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a>
+              <a href="service-drainage.html" class="services-dropdown-item"><i class="fas fa-tint"></i> Drainage Strategies</a>
+              <a href="service-grading.html" class="services-dropdown-item"><i class="fas fa-mountain"></i> Grading & Levelling</a>
+              <a href="service-fra-solar.html" class="services-dropdown-item"><i class="fas fa-solar-panel"></i> Solar PV FRA</a>
+            </div>
+          </li>
           <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -111,7 +80,18 @@
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link active">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item"><i class="fas fa-water"></i> Flood Risk Assessment</a>
+            <a href="service-hydraulic.html" class="services-dropdown-item"><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a>
+            <a href="service-dam-break.html" class="services-dropdown-item"><i class="fas fa-dam"></i> Dam Break Analysis</a>
+            <a href="service-climate.html" class="services-dropdown-item"><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a>
+            <a href="service-drainage.html" class="services-dropdown-item"><i class="fas fa-tint"></i> Drainage Strategies</a>
+            <a href="service-grading.html" class="services-dropdown-item"><i class="fas fa-mountain"></i> Grading & Levelling</a>
+            <a href="service-fra-solar.html" class="services-dropdown-item"><i class="fas fa-solar-panel"></i> Solar PV FRA</a>
+          </div>
+        </li>
         <li><a href="faq.html" class="nav-link">FAQ</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -119,6 +99,7 @@
     </div>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="service-detail-hero">
       <div class="service-detail-overlay"></div>
       <a href="services.html" class="back-button">← Back to Services</a>
@@ -128,6 +109,26 @@
       </div>
     </section>
 
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="breadcrumbs-container">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item">
+            <a href="index.html" class="breadcrumbs-link">
+              <i class="fas fa-home breadcrumbs-icon" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li class="breadcrumbs-item">
+            <a href="services.html" class="breadcrumbs-link">Services</a>
+          </li>
+          <li class="breadcrumbs-item">
+            <span class="breadcrumbs-current" aria-current="page">Grading & Drainage</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
     <!-- Details Section -->
     <section class="service-detail-section">
       <h2>Professional Land Grading Services</h2>
@@ -135,6 +136,11 @@
         Our levelling and grading services ensure proper water drainage and
         foundation stability for your construction projects.
       </p>
+
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="photos/05_Land_Leveling/pexels-aditya-gupta-172079502-11015325.jpg" alt="Land Grading" style="max-width: 70%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);display: block; margin: 0 auto;" />
+        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><i>Professional Land Grading Services</i></p>
+      </div>
 
       <div class="service-features-grid">
         <div class="feature-card">
@@ -152,6 +158,41 @@
           <h3>Cut/Fill Analysis</h3>
           <p>Optimized earthwork balancing and cost estimation</p>
         </div>
+        <div class="feature-card">
+          <span class="feature-icon">🌍</span>
+          <h3>Environmental Compliance</h3>
+          <p>Ensuring all grading activities meet environmental standards</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔧</span>
+          <h3>Equipment Management</h3>
+          <p>Utilizing advanced machinery for efficient grading operations</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>Project Monitoring</h3>
+          <p>Real-time tracking of grading progress and quality control</p>
+        </div>
+      </div>
+
+      <!-- Additional Section -->
+      <div class="additional-section">
+        <h2>Why Choose Our Grading Services?</h2>
+        <p>Our team of experts ensures that every project is completed with precision and care, delivering results that exceed expectations.</p>
+        <div class="additional-grid">
+          <div class="additional-card">
+            <h3>Experienced Team</h3>
+            <p>Our professionals have years of experience in land grading and site preparation.</p>
+          </div>
+          <div class="additional-card">
+            <h3>Advanced Technology</h3>
+            <p>We use the latest equipment and software for accurate and efficient grading.</p>
+          </div>
+          <div class="additional-card">
+            <h3>Customer Satisfaction</h3>
+            <p>We prioritize your needs and ensure complete satisfaction with our services.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -161,33 +202,94 @@
       <p>Contact our experts for professional levelling and grading solutions</p>
       <a href="contact.html" class="cta-button">Get Started Today</a>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="enhanced-footer">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img src="logo.jpg" alt="HYDRisk Logo" width="60" height="60" loading="lazy" />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
               Leading global consulting firm for flood risk assessment and
-              management solutions.
+              management solutions. Protecting your assets with cutting-edge
+              technology and expertise.
             </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+            </div>
           </div>
+
+          <div class="footer-section">
+            <h4>About HYDRisk</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Mission & Vision</a></li>
+              <li><a href="about.html">Our Goals</a></li>
+              <li><a href="about.html">Expert Team</a></li>
+              <li><a href="about.html">IIT Alumni Network</a></li>
+            </ul>
+          </div>
+
           <div class="footer-section">
             <h4>Quick Links</h4>
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
+              <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
+              <li><a href="service-fra.html">Flood Risk Assessment</a></li>
+              <li><a href="service-climate.html">Climate Risk Analysis</a></li>
+              <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
+              <li><a href="services.html">View All Services</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>&copy; 2024 HYDRisk. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="js/api-handler.js"></script>
     <script src="js/mobile-nav.js"></script>
   </body>
 </html>

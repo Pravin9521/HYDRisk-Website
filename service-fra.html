@@ -1,8 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
     <title>Flood Risk Assessment - HYDRisk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,25 +17,89 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles/main_fixed.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/components/navigation.css" />
     <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/sections.css" />
+    <link rel="stylesheet" href="styles/components/impact.css" />
     <link rel="stylesheet" href="styles/components/service-fra.css" />
-    <meta name="description" content="Professional flood risk assessment services for property protection and regulatory compliance. Expert analysis, modeling, and mitigation strategies." />
-    <meta name="keywords" content="flood risk assessment, flood modeling, flood mitigation, property protection, HYDRisk" />
+    <link rel="stylesheet" href="styles/components/breadcrumbs.css" />
+    <meta
+      name="description"
+      content="Professional flood risk assessment services for property protection and regulatory compliance. Expert analysis, modeling, and mitigation strategies."
+    />
+    <meta
+      name="keywords"
+      content="flood risk assessment, flood modeling, flood mitigation, property protection, HYDRisk"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/service-fra.html" />
+    <meta property="og:title" content="Flood Risk Assessment - HYDRisk" />
+    <meta
+      property="og:description"
+      content="Comprehensive flood risk studies for new developments and existing infrastructure"
+    />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://hydrisk.com/service-fra.html"
+    />
+    <meta property="twitter:title" content="Flood Risk Assessment - HYDRisk" />
+    <meta
+      property="twitter:description"
+      content="Comprehensive flood risk studies for infrastructure protection"
+    />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hydrisk.com/service-fra.html" />
   </head>
-  <body>
+  <body class="service-fra-page">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="services-dropdown">
+            <a href="services.html" class="nav-link active">Services</a>
+            <div class="services-dropdown-menu">
+              <a href="service-fra.html" class="services-dropdown-item"
+                ><i class="fas fa-water"></i> Flood Risk Assessment</a
+              >
+              <a href="service-hydraulic.html" class="services-dropdown-item"
+                ><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a
+              >
+              <a href="service-dam-break.html" class="services-dropdown-item"
+                ><i class="fas fa-dam"></i> Dam Break Analysis</a
+              >
+              <a href="service-climate.html" class="services-dropdown-item"
+                ><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a
+              >
+              <a href="service-drainage.html" class="services-dropdown-item"
+                ><i class="fas fa-tint"></i> Drainage Strategies</a
+              >
+              <a href="service-grading.html" class="services-dropdown-item"
+                ><i class="fas fa-mountain"></i> Grading & Levelling</a
+              >
+              <a href="service-fra-solar.html" class="services-dropdown-item"
+                ><i class="fas fa-solar-panel"></i> Solar PV FRA</a
+              >
+            </div>
+          </li>
           <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -48,258 +115,462 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html" class="nav-logo">
-        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
         <span>HYDRisk</span>
       </a>
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link active">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item"
+              ><i class="fas fa-water"></i> Flood Risk Assessment</a
+            >
+            <a href="service-hydraulic.html" class="services-dropdown-item"
+              ><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a
+            >
+            <a href="service-dam-break.html" class="services-dropdown-item"
+              ><i class="fas fa-dam"></i> Dam Break Analysis</a
+            >
+            <a href="service-climate.html" class="services-dropdown-item"
+              ><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a
+            >
+            <a href="service-drainage.html" class="services-dropdown-item"
+              ><i class="fas fa-tint"></i> Drainage Strategies</a
+            >
+            <a href="service-grading.html" class="services-dropdown-item"
+              ><i class="fas fa-mountain"></i> Grading & Levelling</a
+            >
+            <a href="service-fra-solar.html" class="services-dropdown-item"
+              ><i class="fas fa-solar-panel"></i> Solar PV FRA</a
+            >
+          </div>
+        </li>
         <li><a href="faq.html" class="nav-link">FAQ</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
 
-    <section class="service-detail-hero">
-      <video class="service-detail-video" autoplay muted loop playsinline>
-        <source src="videos/flood-assessment.mp4" type="video/mp4" />
-        <source src="videos/flood-assessment.webm" type="video/webm" />
-      </video>
-      <div class="service-detail-overlay"></div>
-      <a href="services.html" class="back-button">← Back to Services</a>
-      <div class="service-detail-content">
-        <h1>Flood Risk Assessment</h1>
+    <main id="main-content">
+      <section class="service-detail-hero">
+        <video class="service-detail-video" autoplay muted loop playsinline>
+          <!-- fallback to existing site video files to avoid broken links -->
+          <source src="water.mp4" type="video/mp4" />
+          <source src="dam_video.mp4" type="video/mp4" />
+        </video>
+        <div class="service-detail-overlay"></div>
+        <a href="services.html" class="back-button">← Back to Services</a>
+        <div class="service-detail-content">
+          <h1>Flood Risk Assessment</h1>
+          <p>
+            Comprehensive flood risk studies for new developments and existing
+            infrastructure. Protect your assets with our expert analysis and
+            mitigation strategies.
+          </p>
+          <a href="#contact" class="hero-cta-button">Get Free Consultation</a>
+        </div>
+      </section>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="breadcrumbs-container">
+          <ol class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+              <a href="index.html" class="breadcrumbs-link">
+                <i class="fas fa-home breadcrumbs-icon" aria-hidden="true"></i>
+                Home
+              </a>
+            </li>
+            <li class="breadcrumbs-item">
+              <a href="services.html" class="breadcrumbs-link">Services</a>
+            </li>
+            <li class="breadcrumbs-item">
+              <span class="breadcrumbs-current" aria-current="page"
+                >Flood Risk Assessment</span
+              >
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <section class="service-detail-section">
+        <h2>Comprehensive Risk Analysis</h2>
         <p>
-          Comprehensive flood risk studies for new developments and existing infrastructure. Protect your assets with our expert analysis and mitigation strategies.
+          Our flood risk assessments provide detailed analysis of potential
+          flooding scenarios and their impacts on your property and operations.
+          We use advanced modeling techniques and historical data to identify
+          vulnerabilities and develop tailored solutions.
         </p>
-        <a href="#contact" class="hero-cta-button">Get Free Consultation</a>
-      </div>
-    </section>
+        <p>
+          Our team of certified hydrologists and engineers conducts thorough
+          site evaluations, incorporating climate data, topographic surveys, and
+          infrastructure assessments to deliver accurate risk profiles and
+          actionable recommendations.
+        </p>
 
-    <section class="service-detail-section">
-      <h2>Comprehensive Risk Analysis</h2>
-      <p>
-        Our flood risk assessments provide detailed analysis of potential flooding scenarios
-        and their impacts on your property and operations. We use advanced modeling techniques
-        and historical data to identify vulnerabilities and develop tailored solutions.
-      </p>
-      <p>
-        Our team of certified hydrologists and engineers conducts thorough site evaluations,
-        incorporating climate data, topographic surveys, and infrastructure assessments to
-        deliver accurate risk profiles and actionable recommendations.
-      </p>
+        <div>
+          <img
+            src="photos/01_FRA/3_HEC_RAS_Floood_Image.png"
+            alt="HEC-RAS Flood Modeling"
+          />
+          <p><i>HEC-RAS Flood Modeling Analysis</i></p>
+        </div>
 
-      <div class="service-features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">🗺️</span>
-          <h3>Site Analysis</h3>
-          <p>Comprehensive site-specific flood zone analysis and mapping using GIS technology and field surveys</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">📊</span>
-          <h3>Risk Modeling</h3>
-          <p>Advanced rainfall-runoff modeling, flood prediction, and scenario analysis with probabilistic assessments</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">📋</span>
-          <h3>Mitigation Strategies</h3>
-          <p>Development of effective flood mitigation and adaptation strategies including structural and non-structural measures</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">🔍</span>
-          <h3>Vulnerability Assessment</h3>
-          <p>Detailed evaluation of infrastructure, assets, and operations to identify specific flood risks and impacts</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">📈</span>
-          <h3>Cost-Benefit Analysis</h3>
-          <p>Comprehensive economic analysis of flood risks versus mitigation costs to optimize investment decisions</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">📋</span>
-          <h3>Regulatory Compliance</h3>
-          <p>Ensuring all assessments meet local, state, and federal flood risk management regulations and standards</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-process-section">
-      <h2>Our FRA Process</h2>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h3>Site Assessment</h3>
-          <p>Initial site visit and data collection including topography, hydrology, and existing infrastructure</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h3>Risk Analysis</h3>
-          <p>Detailed modeling of flood scenarios using advanced software and historical data</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h3>Mitigation Planning</h3>
-          <p>Development of comprehensive strategies to reduce flood risk and protect assets</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <h3>Implementation Support</h3>
-          <p>Guidance on implementing recommended measures and ongoing monitoring</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-benefits-section">
-      <h2>Key Benefits</h2>
-      <div class="benefits-grid">
-        <div class="benefit-item">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Asset Protection</h3>
-          <p>Safeguard your property and infrastructure from flood damage</p>
-        </div>
-        <div class="benefit-item">
-          <i class="fas fa-chart-line"></i>
-          <h3>Cost Savings</h3>
-          <p>Reduce insurance premiums and avoid costly repairs</p>
-        </div>
-        <div class="benefit-item">
-          <i class="fas fa-certificate"></i>
-          <h3>Compliance</h3>
-          <p>Meet regulatory requirements for flood risk management</p>
-        </div>
-        <div class="benefit-item">
-          <i class="fas fa-clock"></i>
-          <h3>Quick Turnaround</h3>
-          <p>Fast, efficient assessments with detailed reporting</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-why-choose-section">
-      <h2>Why Choose HYDRisk?</h2>
-      <div class="why-choose-content">
-        <div class="why-choose-text">
-          <p>With over 15 years of experience in flood risk assessment, HYDRisk has helped hundreds of clients protect their assets and ensure compliance. Our team of certified engineers and hydrologists uses the latest technology and methodologies to deliver accurate, actionable insights.</p>
-          <ul class="why-choose-list">
-            <li><i class="fas fa-check"></i> Certified professionals with extensive experience</li>
-            <li><i class="fas fa-check"></i> State-of-the-art modeling software</li>
-            <li><i class="fas fa-check"></i> Comprehensive reporting and documentation</li>
-            <li><i class="fas fa-check"></i> Ongoing support and consultation</li>
-          </ul>
-        </div>
-        <div class="why-choose-stats">
-          <div class="stat">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">Projects Completed</span>
+        <div class="service-features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">🗺️</span>
+            <h3>Site Analysis</h3>
+            <p>
+              Comprehensive site-specific flood zone analysis and mapping using
+              GIS technology and field surveys
+            </p>
           </div>
-          <div class="stat">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Years Experience</span>
+          <div class="feature-card">
+            <span class="feature-icon">📊</span>
+            <h3>Risk Modeling</h3>
+            <p>
+              Advanced rainfall-runoff modeling, flood prediction, and scenario
+              analysis with probabilistic assessments
+            </p>
           </div>
-          <div class="stat">
-            <span class="stat-number">98%</span>
-            <span class="stat-label">Client Satisfaction</span>
+          <div class="feature-card">
+            <span class="feature-icon">📋</span>
+            <h3>Mitigation Strategies</h3>
+            <p>
+              Development of effective flood mitigation and adaptation
+              strategies including structural and non-structural measures
+            </p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🔍</span>
+            <h3>Vulnerability Assessment</h3>
+            <p>
+              Detailed evaluation of infrastructure, assets, and operations to
+              identify specific flood risks and impacts
+            </p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📈</span>
+            <h3>Cost-Benefit Analysis</h3>
+            <p>
+              Comprehensive economic analysis of flood risks versus mitigation
+              costs to optimize investment decisions
+            </p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📋</span>
+            <h3>Regulatory Compliance</h3>
+            <p>
+              Ensuring all assessments meet local, state, and federal flood risk
+              management regulations and standards
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="process-section">
+        <h2>Our FRA Process</h2>
+        <p>
+          We follow a systematic approach to flood risk assessment ensuring
+          comprehensive coverage of all critical aspects
+        </p>
+
+        <div class="process-grid">
+          <div class="process-step" data-step="1">
+            <h3>Site Assessment</h3>
+            <p>
+              Initial site visit and data collection including topography,
+              hydrology, and existing infrastructure
+            </p>
+          </div>
+          <div class="process-step" data-step="2">
+            <h3>Risk Analysis</h3>
+            <p>
+              Detailed modeling of flood scenarios using advanced software and
+              historical data
+            </p>
+          </div>
+          <div class="process-step" data-step="3">
+            <h3>Mitigation Planning</h3>
+            <p>
+              Development of comprehensive strategies to reduce flood risk and
+              protect assets
+            </p>
+          </div>
+          <div class="process-step" data-step="4">
+            <h3>Implementation Support</h3>
+            <p>
+              Guidance on implementing recommended measures and ongoing
+              monitoring
+            </p>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="service-faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-accordion">
-        <div class="faq-item">
-          <button class="faq-question">How long does a flood risk assessment take?</button>
-          <div class="faq-answer">
-            <p>Typically 2-4 weeks depending on site complexity and data availability. We provide regular updates throughout the process.</p>
+      <section class="service-benefits-section">
+        <h2>Key Benefits</h2>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Asset Protection</h3>
+            <p>Safeguard your property and infrastructure from flood damage</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-chart-line"></i>
+            <h3>Cost Savings</h3>
+            <p>Reduce insurance premiums and avoid costly repairs</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-certificate"></i>
+            <h3>Compliance</h3>
+            <p>Meet regulatory requirements for flood risk management</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-clock"></i>
+            <h3>Quick Turnaround</h3>
+            <p>Fast, efficient assessments with detailed reporting</p>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question">What data do you need for the assessment?</button>
-          <div class="faq-answer">
-            <p>We require site plans, historical flood data, topography information, and details about existing infrastructure. We'll guide you through the data collection process.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Do you provide ongoing support after the assessment?</button>
-          <div class="faq-answer">
-            <p>Yes, we offer ongoing consultation, monitoring services, and updates to assessments as conditions change or new data becomes available.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact" class="service-contact-section">
-      <h2>Get Your Free Consultation</h2>
-      <p>Ready to protect your property from flood risks? Contact us today for a free initial consultation.</p>
-      <form class="contact-form">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required>
+      <section class="service-why-choose-section">
+        <h2>Why Choose HYDRisk?</h2>
+        <div class="why-choose-content">
+          <div class="why-choose-text">
+            <p>
+              With over 15 years of experience in flood risk assessment, HYDRisk
+              has helped hundreds of clients protect their assets and ensure
+              compliance. Our team of certified engineers and hydrologists uses
+              the latest technology and methodologies to deliver accurate,
+              actionable insights.
+            </p>
+            <ul class="why-choose-list">
+              <li>
+                <i class="fas fa-check"></i> Certified professionals with
+                extensive experience
+              </li>
+              <li>
+                <i class="fas fa-check"></i> State-of-the-art modeling software
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Comprehensive reporting and
+                documentation
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Ongoing support and consultation
+              </li>
+            </ul>
+          </div>
+          <div class="why-choose-stats">
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
+      </section>
+
+      <section class="service-faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question">
+              How long does a flood risk assessment take?
+            </button>
+            <div class="faq-answer">
+              <p>
+                Typically 2-4 weeks depending on site complexity and data
+                availability. We provide regular updates throughout the process.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What data do you need for the assessment?
+            </button>
+            <div class="faq-answer">
+              <p>
+                We require site plans, historical flood data, topography
+                information, and details about existing infrastructure. We'll
+                guide you through the data collection process.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you provide ongoing support after the assessment?
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, we offer ongoing consultation, monitoring services, and
+                updates to assessments as conditions change or new data becomes
+                available.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="form-group">
-          <label for="message">Project Details</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your project and specific needs..."></textarea>
-        </div>
-        <button type="submit" class="submit-button">Request Consultation</button>
-      </form>
-    </section>
+      </section>
+
+      <section id="contact" class="service-contact-section">
+        <h2>Get Your Free Consultation</h2>
+        <p>
+          Ready to protect your property from flood risks? Contact us today for
+          a free initial consultation.
+        </p>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Tell us about your project and specific needs..."
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-button">
+            Request Consultation
+          </button>
+        </form>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="enhanced-footer">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img
+                src="logo.jpg"
+                alt="HYDRisk Logo"
+                width="60"
+                height="60"
+                loading="lazy"
+              />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
               Leading global consulting firm for flood risk assessment and
-              management solutions.
+              management solutions. Protecting your assets with cutting-edge
+              technology and expertise.
             </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+            </div>
           </div>
+
+          <div class="footer-section">
+            <h4>About HYDRisk</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Mission & Vision</a></li>
+              <li><a href="about.html">Our Goals</a></li>
+              <li><a href="about.html">Expert Team</a></li>
+              <li><a href="about.html">IIT Alumni Network</a></li>
+            </ul>
+          </div>
+
           <div class="footer-section">
             <h4>Quick Links</h4>
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="service-dam-break.html">Dam Break Analysis</a></li>
+              <li><a href="service-hydraulic.html">Hydraulic Modeling</a></li>
+              <li><a href="service-fra.html">Flood Risk Assessment</a></li>
+              <li><a href="service-climate.html">Climate Risk Analysis</a></li>
+              <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
+              <li><a href="services.html">View All Services</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>&copy; 2024 HYDRisk. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="js/api-handler.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/api-handler.js"></script>
     <script src="js/mobile-nav.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
         if (mobileMenuToggle && mobileMenu) {
-          mobileMenuToggle.addEventListener('click', function() {
-            console.log('Mobile menu toggle clicked');
-            mobileMenu.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
+          mobileMenuToggle.addEventListener("click", function () {
+            console.log("Mobile menu toggle clicked");
+            mobileMenu.classList.toggle("active");
+            mobileMenuToggle.classList.toggle("active");
           });
         }
 
         // FAQ accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
+        const faqQuestions = document.querySelectorAll(".faq-question");
         faqQuestions.forEach(question => {
-          question.addEventListener('click', function() {
+          question.addEventListener("click", function () {
             const faqItem = this.parentElement;
-            faqItem.classList.toggle('active');
+            faqItem.classList.toggle("active");
           });
         });
       });

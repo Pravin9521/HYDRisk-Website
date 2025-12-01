@@ -2,8 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="description" content="Comprehensive dam break analysis and river flood modeling services. Advanced hydraulic simulation for emergency planning and risk assessment." />
+    <meta name="keywords" content="dam break analysis, flood modeling, hydraulic simulation, emergency planning, flood risk assessment" />
     <title>Dam Break & River Flood Modelling - HYDRisk</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/service-dam-break.html" />
+    <meta property="og:title" content="Dam Break & River Flood Modelling - HYDRisk" />
+    <meta property="og:description" content="Critical analysis of dam failure scenarios and downstream flooding impacts for emergency planning and risk assessment" />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hydrisk.com/service-dam-break.html" />
+    <meta property="twitter:title" content="Dam Break & River Flood Modelling - HYDRisk" />
+    <meta property="twitter:description" content="Critical analysis of dam failure scenarios and downstream flooding impacts" />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hydrisk.com/service-dam-break.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,151 +33,41 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles/main_fixed.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/sections.css" />
     <link rel="stylesheet" href="styles/components/footer.css" />
-    <style>
-      .service-detail-hero {
-        background: white !important;
-        color: #2c3e50;
-        position: relative;
-      }
-      .service-detail-overlay {
-        background: rgba(0, 0, 0, 0.4) !important;
-      }
-      .service-detail-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 2;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      }
-      .service-detail-content h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-      .service-detail-content p {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
-        margin-bottom: 2rem;
-        opacity: 0.9;
-      }
-      .back-button {
-        position: absolute;
-        top: 2rem;
-        left: 2rem;
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        z-index: 3;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        padding: 0.5rem 1rem;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-        transition: background 0.3s ease;
-      }
-      .back-button:hover {
-        background: rgba(0, 0, 0, 0.7);
-      }
-      .mobile-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(44, 62, 80, 0.98);
-        backdrop-filter: blur(10px);
-        transition: right 0.3s ease;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-      }
-      .mobile-menu.active {
-        right: 0;
-      }
-      .mobile-menu .header-logo {
-        margin-bottom: 3rem;
-        text-align: center;
-      }
-      .mobile-menu .header-nav ul {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-      }
-      .mobile-menu .nav-link {
-        color: white;
-        font-size: 1.8rem;
-        padding: 1rem 2rem;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .mobile-menu .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-        transform: translateY(-2px);
-      }
-      .mobile-menu .nav-link.active {
-        background-color: rgba(52, 152, 219, 0.8);
-        color: white;
-      }
-      .mobile-menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 0.5rem;
-      }
-      .mobile-menu-toggle span {
-        width: 25px;
-        height: 3px;
-        background: white;
-        margin: 3px 0;
-        transition: 0.3s;
-      }
-      @media (max-width: 768px) {
-        .header-nav {
-          display: none;
-        }
-        .mobile-menu-toggle {
-          display: flex;
-        }
-      }
-      .service-detail-section {
-        padding: 4rem 0;
-        background: white;
-        color: #2c3e50;
-        text-align: center;
-      }
-      .service-features-grid {
-        overflow: visible;
-      }
-      .cta-section {
-        padding: 4rem 0;
-        background: white;
-        color: #2c3e50;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/components/navigation.css" />
+    <link rel="stylesheet" href="styles/components/impact.css" />
+    <link rel="stylesheet" href="styles/components/breadcrumbs.css" />
+    <link rel="stylesheet" href="styles/components/service-dam-break.css" />
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="services-dropdown">
+            <a href="services.html" class="nav-link active">Services</a>
+            <div class="services-dropdown-menu">
+              <a href="service-fra.html" class="services-dropdown-item"><i class="fas fa-water"></i> Flood Risk Assessment</a>
+              <a href="service-hydraulic.html" class="services-dropdown-item"><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a>
+              <a href="service-dam-break.html" class="services-dropdown-item"><i class="fas fa-dam"></i> Dam Break Analysis</a>
+              <a href="service-climate.html" class="services-dropdown-item"><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a>
+              <a href="service-drainage.html" class="services-dropdown-item"><i class="fas fa-tint"></i> Drainage Strategies</a>
+              <a href="service-grading.html" class="services-dropdown-item"><i class="fas fa-mountain"></i> Grading & Levelling</a>
+              <a href="service-fra-solar.html" class="services-dropdown-item"><i class="fas fa-solar-panel"></i> Solar PV FRA</a>
+            </div>
+          </li>
           <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -174,19 +83,31 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html" class="nav-logo">
-        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
         <span>HYDRisk</span>
       </a>
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link active">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item"><i class="fas fa-water"></i> Flood Risk Assessment</a>
+            <a href="service-hydraulic.html" class="services-dropdown-item"><i class="fas fa-project-diagram"></i> Hydraulic Modelling</a>
+            <a href="service-dam-break.html" class="services-dropdown-item"><i class="fas fa-dam"></i> Dam Break Analysis</a>
+            <a href="service-climate.html" class="services-dropdown-item"><i class="fas fa-cloud-rain"></i> Climate Risk Analysis</a>
+            <a href="service-drainage.html" class="services-dropdown-item"><i class="fas fa-tint"></i> Drainage Strategies</a>
+            <a href="service-grading.html" class="services-dropdown-item"><i class="fas fa-mountain"></i> Grading & Levelling</a>
+            <a href="service-fra-solar.html" class="services-dropdown-item"><i class="fas fa-solar-panel"></i> Solar PV FRA</a>
+          </div>
+        </li>
         <li><a href="faq.html" class="nav-link">FAQ</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
 
+    <main id="main-content">
     <section class="service-detail-hero">
       <video class="service-detail-video" autoplay muted loop playsinline>
         <source src="dam_video.mp4" type="video/mp4" />
@@ -202,6 +123,26 @@
       </div>
     </section>
 
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="breadcrumbs-container">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item">
+            <a href="index.html" class="breadcrumbs-link">
+              <i class="fas fa-home breadcrumbs-icon" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li class="breadcrumbs-item">
+            <a href="services.html" class="breadcrumbs-link">Services</a>
+          </li>
+          <li class="breadcrumbs-item">
+            <span class="breadcrumbs-current" aria-current="page">Dam Break Analysis</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
     <section class="service-detail-section">
       <h2>Comprehensive Dam Safety Analysis</h2>
       <p>
@@ -210,6 +151,11 @@
         assessment and emergency planning. Our advanced modeling capabilities
         help identify potential failure modes and assess downstream impacts.
       </p>
+
+      <div style="margin: 2rem 0;">
+        <img src="photos/03_Dam_Break_Analysis/HEC_RAS_2d.png" alt="Dam Break Analysis" style="max-width: 70%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);display: block; margin: 0 auto;" />
+        <p style="font-size: 0.9em; color: #666; margin-top: 0.5rem;"><i>2D HEC-RAS Dam Break Simulation</i></p>
+      </div>
 
       <div class="service-features-grid">
         <div class="feature-card">
@@ -351,14 +297,15 @@
       </p>
       <a href="contact.html" class="cta-button">Get Started Today</a>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="enhanced-footer">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img src="logo.jpg" alt="HYDRisk Logo" width="60" height="60" loading="lazy" />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
@@ -417,20 +364,20 @@
               <li><a href="service-fra.html">Flood Risk Assessment</a></li>
               <li><a href="service-climate.html">Climate Risk Analysis</a></li>
               <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
               <li><a href="services.html">View All Services</a></li>
             </ul>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <div class="footer-container">
             <div class="footer-bottom-content">
               <p>&copy; 2024 HYDRisk. All rights reserved.</p>
               <div class="footer-bottom-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Cookie Policy</a>
-              </div>
             </div>
           </div>
         </div>
@@ -441,6 +388,7 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="js/api-handler.js"></script>
     <script src="js/mobile-nav.js"></script>
   </body>
 </html>

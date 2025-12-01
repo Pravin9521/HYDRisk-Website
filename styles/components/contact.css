@@ -249,6 +249,70 @@
     color: rgba(113, 128, 150, 0.6);
   }
 
+  /* Error message styles */
+  .error-message {
+    display: block;
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+  }
+
+  .error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .form-control.error {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+  }
+
+  .form-control.error:focus {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2);
+  }
+
+  /* Form message (success/error) */
+  .form-message {
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    display: none;
+    animation: slideDown 0.3s ease;
+  }
+
+  .form-message.show {
+    display: block;
+  }
+
+  .form-message.success {
+    background-color: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+  }
+
+  .form-message.error {
+    background-color: #fed7d7;
+    color: #742a2a;
+    border: 1px solid #fc8181;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Button Styles */
   .btn {
     display: inline-block;

@@ -187,46 +187,205 @@ function setupScrollAnimations() {
   });
 }
 
-// Form handling
+// Form handling with improved validation and error messages
 function setupFormHandling() {
   const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+  if (!contactForm) return;
 
-      // Basic form validation
-      const formData = new FormData(contactForm);
-      const name = contactForm.querySelector('input[type="text"]').value;
-      const email = contactForm.querySelector('input[type="email"]').value;
-      const message = contactForm.querySelector('textarea').value;
+  // Helper function to show error
+  function showError(input, message) {
+    const formGroup = input.closest('.form-group');
+    if (!formGroup) return;
+    
+    const errorElement = formGroup.querySelector('.error-message');
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.add('show');
+      input.classList.add('error');
+    }
+  }
 
-      if (!name || !email || !message) {
-        alert('Please fill in all fields');
+  // Helper function to clear error
+  function clearError(input) {
+    const formGroup = input.closest('.form-group');
+    if (!formGroup) return;
+    
+    const errorElement = formGroup.querySelector('.error-message');
+    if (errorElement) {
+      errorElement.textContent = '';
+      errorElement.classList.remove('show');
+      input.classList.remove('error');
+    }
+  }
+
+  // Helper function to show form message
+  function showFormMessage(form, message, type) {
+    let messageElement = form.querySelector('.form-message');
+    if (!messageElement) {
+      messageElement = document.createElement('div');
+      messageElement.className = 'form-message';
+      form.insertBefore(messageElement, form.querySelector('button[type="submit"]'));
+    }
+    
+    messageElement.textContent = message;
+    messageElement.className = `form-message ${type} show`;
+    
+    // Scroll to message
+    messageElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Clear errors on input
+  contactForm.querySelectorAll('input, textarea').forEach(input => {
+    input.addEventListener('input', () => {
+      clearError(input);
+    });
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    try {
+      // Clear previous errors
+      contactForm.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+      contactForm.querySelectorAll('.error-message').forEach(el => {
+        el.classList.remove('show');
+        el.textContent = '';
+      });
+      
+      const formMessage = contactForm.querySelector('.form-message');
+      if (formMessage) {
+        formMessage.classList.remove('show');
+      }
+
+      // Get form fields
+      const nameInput = contactForm.querySelector('input[name="name"], input[type="text"]');
+      const emailInput = contactForm.querySelector('input[name="email"], input[type="email"]');
+      const messageInput = contactForm.querySelector('textarea[name="message"], textarea');
+      
+      let isValid = true;
+
+      // Validate name
+      if (!nameInput || !nameInput.value.trim()) {
+        if (nameInput) showError(nameInput, 'Name is required');
+        isValid = false;
+      } else if (nameInput.value.trim().length < 2) {
+        showError(nameInput, 'Name must be at least 2 characters');
+        isValid = false;
+      }
+
+      // Validate email
+      if (!emailInput || !emailInput.value.trim()) {
+        if (emailInput) showError(emailInput, 'Email is required');
+        isValid = false;
+      } else {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+          showError(emailInput, 'Please enter a valid email address');
+          isValid = false;
+        }
+      }
+
+      // Validate message
+      if (!messageInput || !messageInput.value.trim()) {
+        if (messageInput) showError(messageInput, 'Message is required');
+        isValid = false;
+      } else if (messageInput.value.trim().length < 10) {
+        showError(messageInput, 'Message must be at least 10 characters');
+        isValid = false;
+      }
+
+      if (!isValid) {
+        // Focus first error field
+        const firstError = contactForm.querySelector('.error');
+        if (firstError) {
+          firstError.focus();
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         return;
       }
 
-      // Simulate form submission
+      // Get submit button
       const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitButton.textContent;
-
-      submitButton.textContent = 'Sending...';
+      const buttonText = submitButton.querySelector('.button-text');
+      const buttonLoader = submitButton.querySelector('.button-loader');
+      
+      // Show loading state
+      if (buttonText) buttonText.style.display = 'none';
+      if (buttonLoader) buttonLoader.style.display = 'inline-block';
       submitButton.disabled = true;
 
-      setTimeout(() => {
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      }, 1000);
-    });
-  }
+      // Submit to API
+      const formDataObj = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        phone: contactForm.querySelector('input[name="phone"], input[type="tel"]')?.value.trim() || null,
+        subject: contactForm.querySelector('input[name="subject"]')?.value.trim() || null,
+        message: messageInput.value.trim(),
+        serviceType: contactForm.dataset.serviceType || null
+      };
+
+      // Use API handler if available, otherwise fallback
+      if (typeof apiHandler !== 'undefined') {
+        apiHandler.submitContact(formDataObj).then(result => {
+          if (result.success) {
+            showFormMessage(contactForm, result.message || 'Thank you for your message! We will get back to you soon.', 'success');
+            contactForm.reset();
+            
+            // Reset button
+            if (buttonText) buttonText.style.display = 'inline';
+            if (buttonLoader) buttonLoader.style.display = 'none';
+            submitButton.disabled = false;
+            
+            // Focus first input after success
+            if (nameInput) nameInput.focus();
+          } else {
+            showFormMessage(contactForm, result.error || 'An error occurred. Please try again later.', 'error');
+            if (buttonText) buttonText.style.display = 'inline';
+            if (buttonLoader) buttonLoader.style.display = 'none';
+            submitButton.disabled = false;
+          }
+        }).catch(error => {
+          console.error('API submission error:', error);
+          showFormMessage(contactForm, 'An error occurred. Please try again later.', 'error');
+          if (buttonText) buttonText.style.display = 'inline';
+          if (buttonLoader) buttonLoader.style.display = 'none';
+          submitButton.disabled = false;
+        });
+      } else {
+        // Fallback if API handler not loaded
+        setTimeout(() => {
+          showFormMessage(contactForm, 'Thank you for your message! We will get back to you soon.', 'success');
+          contactForm.reset();
+          
+          // Reset button
+          if (buttonText) buttonText.style.display = 'inline';
+          if (buttonLoader) buttonLoader.style.display = 'none';
+          submitButton.disabled = false;
+          
+          // Focus first input after success
+          if (nameInput) nameInput.focus();
+        }, 1000);
+      }
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      showFormMessage(contactForm, 'An error occurred. Please try again later.', 'error');
+      
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const buttonText = submitButton?.querySelector('.button-text');
+      const buttonLoader = submitButton?.querySelector('.button-loader');
+      if (buttonText) buttonText.style.display = 'inline';
+      if (buttonLoader) buttonLoader.style.display = 'none';
+      if (submitButton) submitButton.disabled = false;
+    }
+  });
 }
 
 // Newsletter form handling
 function setupNewsletterForm() {
   const newsletterForm = document.querySelector('.newsletter-form');
   if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+    newsletterForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const emailInput = newsletterForm.querySelector('.newsletter-input');
@@ -243,12 +402,38 @@ function setupNewsletterForm() {
       submitButton.textContent = 'Subscribing...';
       submitButton.disabled = true;
 
-      setTimeout(() => {
-        alert('Thank you for subscribing to our newsletter!');
-        emailInput.value = '';
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      }, 1000);
+      const nameInput = newsletterForm.querySelector('input[name="name"]');
+
+      // Submit to API
+      if (typeof apiHandler !== 'undefined') {
+        apiHandler.subscribeNewsletter(email.trim(), nameInput?.value.trim() || null, 'website').then(result => {
+          if (result.success) {
+            alert(result.message || 'Thank you for subscribing to our newsletter!');
+            emailInput.value = '';
+            if (nameInput) nameInput.value = '';
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          } else {
+            alert(result.error || 'An error occurred. Please try again later.');
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          }
+        }).catch(error => {
+          console.error('Newsletter subscription error:', error);
+          alert('An error occurred. Please try again later.');
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+        });
+      } else {
+        // Fallback if API handler not loaded
+        setTimeout(() => {
+          alert('Thank you for subscribing to our newsletter!');
+          emailInput.value = '';
+          if (nameInput) nameInput.value = '';
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+        }, 1000);
+      }
     });
   }
 }

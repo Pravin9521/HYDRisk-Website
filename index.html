@@ -2,8 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HYDRisk - Advanced Flood Risk Management Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="description" content="HYDRisk provides advanced flood risk assessment and management solutions. Expert consulting for dam break analysis, hydraulic modeling, and flood risk assessment." />
+    <meta name="keywords" content="flood risk assessment, dam break analysis, hydraulic modeling, flood management, water risk consulting" />
+    <title>HYDRisk - Flood Risk Assessment Consultants</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydrisk.com/" />
+    <meta property="og:title" content="HYDRisk - Flood Risk Assessment Consultants" />
+    <meta property="og:description" content="Protect your assets with cutting-edge flood risk assessment and management technology." />
+    <meta property="og:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hydrisk.com/" />
+    <meta property="twitter:title" content="HYDRisk - Flood Risk Assessment Consultants" />
+    <meta property="twitter:description" content="Protect your assets with cutting-edge flood risk assessment and management technology." />
+    <meta property="twitter:image" content="https://hydrisk.com/logo.jpg" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HYDRisk",
+      "url": "https://hydrisk.com",
+      "logo": "https://hydrisk.com/logo.jpg",
+      "description": "Advanced flood risk assessment and management solutions",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9156882405",
+        "contactType": "Customer Service",
+        "email": "info@hydrisk.com",
+        "areaServed": "Worldwide",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Level 5, Tower B, Cybercity, Magarpatta City, Hadapsar",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411013",
+        "addressCountry": "IN"
+      },
+      "sameAs": []
+    }
+    </script>
+    
+    <!-- Analytics Placeholder -->
+    <!-- Replace with your analytics code (Google Analytics, etc.) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,17 +81,45 @@
     <link rel="stylesheet" href="styles/components/impact.css" />
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
-          <img src="logo.jpg" alt="HYDRisk Logo" />
+          <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
           <span>HYDRisk</span>
         </a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li class="services-dropdown">
+            <a href="services.html" class="nav-link">Services</a>
+            <div class="services-dropdown-menu">
+              <a href="service-fra.html" class="services-dropdown-item">
+                <i class="fas fa-water"></i> Flood Risk Assessment
+              </a>
+              <a href="service-hydraulic.html" class="services-dropdown-item">
+                <i class="fas fa-project-diagram"></i> Hydraulic Modelling
+              </a>
+              <a href="service-dam-break.html" class="services-dropdown-item">
+                <i class="fas fa-dam"></i> Dam Break Analysis
+              </a>
+              <a href="service-climate.html" class="services-dropdown-item">
+                <i class="fas fa-cloud-rain"></i> Climate Risk Analysis
+              </a>
+              <a href="service-drainage.html" class="services-dropdown-item">
+                <i class="fas fa-tint"></i> Drainage Strategies
+              </a>
+              <a href="service-grading.html" class="services-dropdown-item">
+                <i class="fas fa-mountain"></i> Grading & Levelling
+              </a>
+              <a href="service-fra-solar.html" class="services-dropdown-item">
+                <i class="fas fa-solar-panel"></i> Solar PV FRA
+              </a>
+            </div>
+          </li>
           <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -49,13 +135,38 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html" class="nav-logo">
-        <img src="logo.jpg" alt="HYDRisk Logo" />
+        <img src="logo.jpg" alt="HYDRisk Logo" width="40" height="40" />
         <span>HYDRisk</span>
       </a>
       <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link  active">Home</a></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li class="services-dropdown">
+          <a href="services.html" class="nav-link">Services</a>
+          <div class="mobile-services-submenu">
+            <a href="service-fra.html" class="services-dropdown-item">
+              <i class="fas fa-water"></i> Flood Risk Assessment
+            </a>
+            <a href="service-hydraulic.html" class="services-dropdown-item">
+              <i class="fas fa-project-diagram"></i> Hydraulic Modelling
+            </a>
+            <a href="service-dam-break.html" class="services-dropdown-item">
+              <i class="fas fa-dam"></i> Dam Break Analysis
+            </a>
+            <a href="service-climate.html" class="services-dropdown-item">
+              <i class="fas fa-cloud-rain"></i> Climate Risk Analysis
+            </a>
+            <a href="service-drainage.html" class="services-dropdown-item">
+              <i class="fas fa-tint"></i> Drainage Strategies
+            </a>
+            <a href="service-grading.html" class="services-dropdown-item">
+              <i class="fas fa-mountain"></i> Grading & Levelling
+            </a>
+            <a href="service-fra-solar.html" class="services-dropdown-item">
+              <i class="fas fa-solar-panel"></i> Solar PV FRA
+            </a>
+          </div>
+        </li>
         <li><a href="faq.html" class="nav-link">FAQ</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -63,26 +174,27 @@
     </div>
 
     <!-- Hero Section -->
+<main id="main-content">
 <section id="home" class="hero">
   <!-- Desktop Video -->
-  <video autoplay muted playsinline loop class="hero-video">
+  <video autoplay muted playsinline loop preload="metadata" class="hero-video" aria-label="Dam break flood simulation video">
     <source src="dam_video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
   </video>
 
   <!-- Mobile Video -->
-  <video autoplay muted playsinline loop class="hero-video-mobile">
+  <video autoplay muted playsinline loop preload="metadata" class="hero-video-mobile" aria-label="Dam break flood simulation video">
     <source src="dam_video_mobile.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
   </video>
 
   <div class="hero-content">
     <h1 class="hero-title">
-      <span class="gradient-text">Advanced Flood Risk</span><br />
-      Management Solutions
+      <span class="gradient-text">Flood Risk Assessment</span><br />
+      Consultants
     </h1>
     <p class="hero-subtitle">
-      Protect your assets with cutting-edge flood risk assessment and
-      management technology. From predictive modeling to real-time
-      monitoring, we've got you covered.
+      HYDRisk is a leading global consultant in flood risk assessment and hydraulic solutions. From solar PV plants to industrial, commercial, and residential projects, we help you stay resilient, compliant, and future-ready.
     </p>
     <div class="hero-buttons">
       <a href="#services" class="btn btn-primary">Explore Services</a>
@@ -97,39 +209,39 @@
         <div class="about-grid">
           <div class="about-content">
             <p>
-              HYDRisk specializes in providing comprehensive flood risk
-              management solutions using advanced technology and data-driven
-              approaches. Our team of experts combines years of experience with
-              cutting-edge tools to deliver accurate risk assessments and
-              effective mitigation strategies.
-            </p>
-            <p>
-              Our mission is to empower clients with the knowledge and tools to
-              understand, mitigate, and adapt to flood challenges. We combine
-              cutting-edge technology with profound expertise to deliver
-              accurate, reliable, and actionable insights.
+              At HYDRisk, we are dedicated to providing cutting-edge solutions for understanding, mitigating, and managing flood risks globally. We specialize in transforming complex hydrological data into actionable insights, enabling our clients to build resilience against the growing threat of flooding.
             </p>
           </div>
           <div class="about-image">
-            <img src="image.jpg" alt="HYDRisk Team at Work" />
+            <img src="photos/02_Hydraulic Modelling/4_HEC_RAS_Flood_About_US.png" alt="HEC-RAS Flood Analysis" width="600" height="400" loading="lazy" />
           </div>
         </div>
 
         <div class="features-grid">
           <div class="feature">
-            <i class="fas fa-chart-line feature-icon"></i>
-            <h3>Predictive Modeling</h3>
-            <p>Advanced algorithms for accurate flood prediction and risk assessment</p>
+            <i class="fas fa-globe feature-icon"></i>
+            <h3>Global Expertise</h3>
+            <p>Leading consultancy in flood risk assessment and hydraulic solutions.</p>
           </div>
           <div class="feature">
-            <i class="fas fa-satellite-dish feature-icon"></i>
-            <h3>Real-time Monitoring</h3>
-            <p>24/7 surveillance and alert systems with automated notifications</p>
+            <i class="fas fa-building feature-icon"></i>
+            <h3>Comprehensive Services</h3>
+            <p>From solar PV plants to industrial, commercial, and residential projects worldwide.</p>
           </div>
           <div class="feature">
-            <i class="fas fa-clipboard-check feature-icon"></i>
-            <h3>Risk Assessment</h3>
-            <p>Comprehensive analysis and detailed reporting for informed decisions</p>
+            <i class="fas fa-flask feature-icon"></i>
+            <h3>Science-Driven Approach</h3>
+            <p>Built on strong foundations of hydrology, engineering, and technology.</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-lightbulb feature-icon"></i>
+            <h3>Actionable Insights</h3>
+            <p>Delivering accurate, reliable, and practical solutions for flood challenges.</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-leaf feature-icon"></i>
+            <h3>Resilience & Sustainability</h3>
+            <p>Helping clients adapt to climate change and safeguard their assets.</p>
           </div>
         </div>
       </div>
@@ -145,86 +257,92 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-image-wrapper">
-              <img src="image.jpg" alt="Dam Break Analysis" class="service-image" />
-              <div class="service-overlay">
-                <i class="fas fa-dam service-icon"></i>
-              </div>
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">Dam Break Analysis</h3>
-              <p class="service-description">
-                Comprehensive dam break modeling and impact assessment using
-                advanced hydraulic simulation tools and GIS technology.
-              </p>
-              <ul class="service-features">
-                <li>Hydraulic modeling and simulation</li>
-                <li>Impact assessment and mapping</li>
-                <li>Emergency response planning</li>
-              </ul>
-              <a href="service-dam-break.html" class="service-link">Learn More →</a>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-image-wrapper">
-              <img src="image.jpg" alt="Flood Risk Assessment" class="service-image" />
+              <img src="photos/01_FRA/3_HEC_RAS_Floood_Image.png" alt="Flood Risk Assessments" class="service-image" width="400" height="300" loading="lazy" />
               <div class="service-overlay">
                 <i class="fas fa-water service-icon"></i>
               </div>
             </div>
             <div class="service-content">
-              <h3 class="service-title">Flood Risk Assessment</h3>
+              <h3 class="service-title">Flood Risk Assessments</h3>
               <p class="service-description">
-                Detailed flood risk analysis for infrastructure projects, urban
-                planning, and insurance purposes using cutting-edge technology.
+                Global expertise in evaluating flood risks for solar PV plants, industries, commercial, and residential sites.
               </p>
-              <ul class="service-features">
-                <li>Probabilistic flood modeling</li>
-                <li>Vulnerability assessment</li>
-                <li>Risk mitigation strategies</li>
-              </ul>
-              <a href="services.html" class="service-link">Learn More →</a>
+              <a href="service-fra.html" class="service-link">Learn More →</a>
             </div>
           </div>
           <div class="service-card">
             <div class="service-image-wrapper">
-              <img src="image.jpg" alt="Hydraulic Modeling" class="service-image" />
+              <img src="photos/02_Hydraulic Modelling/4_HEC_RAS_Flood_About_US.png" alt="Hydraulic Modelling" class="service-image" width="400" height="300" loading="lazy" />
               <div class="service-overlay">
                 <i class="fas fa-project-diagram service-icon"></i>
               </div>
             </div>
             <div class="service-content">
-              <h3 class="service-title">Hydraulic Modeling</h3>
+              <h3 class="service-title">Hydraulic Modelling</h3>
               <p class="service-description">
-                Advanced hydraulic modeling for rivers, channels, and floodplains
-                using state-of-the-art software and computational methods.
+                Using advanced computer simulations, we accurately predict how water will flow during a flood, helping you plan effectively.
               </p>
-              <ul class="service-features">
-                <li>1D and 2D flow modeling</li>
-                <li>Sediment transport analysis</li>
-                <li>Design flood estimation</li>
-              </ul>
               <a href="service-hydraulic.html" class="service-link">Learn More →</a>
             </div>
           </div>
           <div class="service-card">
             <div class="service-image-wrapper">
-              <img src="image.jpg" alt="Real-time Monitoring" class="service-image" />
+              <img src="photos/03_Dam_Break_Analysis/HEC_RAS_2d.png" alt="Dam Break & River Flood Modelling" class="service-image" width="400" height="300" loading="lazy" />
               <div class="service-overlay">
-                <i class="fas fa-broadcast-tower service-icon"></i>
+                <i class="fas fa-dam service-icon"></i>
               </div>
             </div>
             <div class="service-content">
-              <h3 class="service-title">Real-time Monitoring</h3>
+              <h3 class="service-title">Dam Break & River Flood Modelling</h3>
               <p class="service-description">
-                Continuous monitoring systems with automated alerts and
-                comprehensive data analysis for proactive flood management.
+                Predict and prepare for the worst-case scenarios with accurate dam breach and river flood simulations.
               </p>
-              <ul class="service-features">
-                <li>IoT sensor networks</li>
-                <li>Automated alert systems</li>
-                <li>Data analytics and reporting</li>
-              </ul>
-              <a href="services.html" class="service-link">Learn More →</a>
+              <a href="service-dam-break.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img src="photos/04_Climate_Change/pexels-hiteshchoudhary-1739855.jpg" alt="Climate Risk Flood Analysis" class="service-image" width="400" height="300" loading="lazy" />
+              <div class="service-overlay">
+                <i class="fas fa-cloud-rain service-icon"></i>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Climate Risk Flood Analysis</h3>
+              <p class="service-description">
+                We assess how future climate change scenarios will impact your flood risk, helping you build resilience for the long term.
+              </p>
+              <a href="service-climate.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img src="photos/01_FRA/pexels-sveta-k-75705601-8568719.jpg" alt="Drainage Strategies" class="service-image" width="400" height="300" loading="lazy" />
+              <div class="service-overlay">
+                <i class="fas fa-tint service-icon"></i>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Drainage Strategies</h3>
+              <p class="service-description">
+                We provide tailored mitigation solutions and safe water passage systems for solar PV plants, industrial, commercial, and residential developments.
+              </p>
+              <a href="service-drainage.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-image-wrapper">
+              <img src="photos/05_Land_Leveling/pexels-aditya-gupta-172079502-11015325.jpg" alt="Levelling and Grading" class="service-image" width="400" height="300" loading="lazy" />
+              <div class="service-overlay">
+                <i class="fas fa-mountain service-icon"></i>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Levelling and Grading</h3>
+              <p class="service-description">
+                We shape the land to ensure proper water flow and a stable foundation for your development, reducing future flood vulnerabilities.
+              </p>
+              <a href="service-grading.html" class="service-link">Learn More →</a>
             </div>
           </div>
         </div>
@@ -341,15 +459,32 @@
               <p><i class="fas fa-map-marker-alt"></i> 123 Flood Management Way, Water City, WC 12345</p>
             </div>
           </div>
-          <form class="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
+          <form class="contact-form" id="homeContactForm">
+            <div class="form-group">
+              <label for="home-name" class="sr-only">Your Name</label>
+              <input type="text" id="home-name" name="name" placeholder="Your Name" required aria-required="true" />
+              <span class="error-message" id="home-name-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="home-email" class="sr-only">Your Email</label>
+              <input type="email" id="home-email" name="email" placeholder="Your Email" required aria-required="true" />
+              <span class="error-message" id="home-email-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="home-message" class="sr-only">Your Message</label>
+              <textarea id="home-message" name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
+              <span class="error-message" id="home-message-error" role="alert"></span>
+            </div>
+            <div class="form-message" id="home-form-message" role="alert"></div>
+            <button type="submit" class="btn btn-primary">
+              <span class="button-text">Send Message</span>
+              <span class="button-loader" style="display: none;">Sending...</span>
+            </button>
           </form>
         </div>
       </div>
     </section>
+</main>
 
     <!-- Enhanced Footer -->
     <footer class="footer">
@@ -357,7 +492,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="logo.jpg" alt="HYDRisk Logo" />
+              <img src="logo.jpg" alt="HYDRisk Logo" width="60" height="60" loading="lazy" />
               <h3>HYDRisk</h3>
             </div>
             <p class="footer-description">
@@ -416,20 +551,20 @@
               <li><a href="service-fra.html">Flood Risk Assessment</a></li>
               <li><a href="service-climate.html">Climate Risk Analysis</a></li>
               <li><a href="service-grading.html">Grading & Drainage</a></li>
+              <li><a href="service-drainage.html">Drainage Strategies</a></li>
+              <li><a href="service-fra-solar.html">Solar PV FRA</a></li>
               <li><a href="services.html">View All Services</a></li>
             </ul>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <div class="footer-container">
             <div class="footer-bottom-content">
               <p>&copy; 2024 HYDRisk. All rights reserved.</p>
               <div class="footer-bottom-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Cookie Policy</a>
-              </div>
             </div>
           </div>
         </div>
@@ -443,10 +578,14 @@
 
     <!-- JavaScript -->
     <script src="js/mobile-nav.js"></script>
+    <script src="js/impact-counter.js"></script>
     <script>
-      // Back to top button functionality
+      // Back to top button functionality with error handling
+      document.addEventListener('DOMContentLoaded', function() {
+        try {
       const backToTopButton = document.querySelector('.back-to-top');
 
+          if (backToTopButton) {
       // Show/hide button based on scroll position
       window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
@@ -454,7 +593,7 @@
         } else {
           backToTopButton.style.display = 'none';
         }
-      });
+            }, { passive: true });
 
       // Scroll to top on click
       backToTopButton.addEventListener('click', function() {
@@ -462,6 +601,11 @@
           top: 0,
           behavior: 'smooth'
         });
+            });
+          }
+        } catch (error) {
+          console.error('Error initializing back to top button:', error);
+        }
       });
     </script>
   </body>
